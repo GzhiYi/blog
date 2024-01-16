@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Dockerfile的一些用法记录 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Dockerfile的一些用法记录" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="对于docker镜像的制作和compose的使用等就在这进行记录，便于学习理解和记忆使用。" />
+<meta property="og:description" content="对于docker镜像的制作和compose的使用等就在这进行记录，便于学习理解和记忆使用。" />
+<link rel="canonical" href="https://gzhiyi.top/dockerfile" />
+<meta property="og:url" content="https://gzhiyi.top/dockerfile" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-29T16:23:53+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Dockerfile的一些用法记录" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-29T16:23:53+08:00","datePublished":"2021-07-29T16:23:53+08:00","description":"对于docker镜像的制作和compose的使用等就在这进行记录，便于学习理解和记忆使用。","headline":"Dockerfile的一些用法记录","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/dockerfile"},"url":"https://gzhiyi.top/dockerfile"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">Dockerfile的一些用法记录</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-07-29T16:23:53+08:00" itemprop="datePublished">2021-07-29 16:23
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>对于docker镜像的制作和compose的使用等就在这进行记录，便于学习理解和记忆使用。</p>
+
+<h2 id="定制镜像">定制镜像</h2>
+
+<h2 id="dockerfile">Dockerfile</h2>
+
+<p>Dockerfile就当作是一个脚本文件，包含了一系列的指令用于构建每一层镜像。</p>
+
+<p>举例一个定制nginx镜像:</p>
+
+<p>新建一个Dockerfile文件，内容：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM nginx
+RUN <span class="nb">echo</span> <span class="s1">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> <span class="o">&gt;</span> /usr/share/nginx/html/index.html
+</code></pre></div></div>
+
+<h3 id="from">FROM</h3>
+
+<p>指定基础镜像，在这个基础镜像的基础上进行定制。上面的基础镜像就是nginx。如果不以任何镜像为基础进行定制，则可以指定一个空白镜像<code class="language-plaintext highlighter-rouge">scratch</code>。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM scratch
+</code></pre></div></div>
+
+<h3 id="run">RUN</h3>
+
+<ul>
+  <li>
+    <p>shell格式，直接RUN + 命令的方式。</p>
+  </li>
+  <li>
+    <p>exec格式，RUN [“可执行文件”, “参数1”, “参数2”]</p>
+  </li>
+</ul>
+
+<p>由于每一个RUN指令都会建立一层镜像，所以具有同一个目的的命令应该写在一个RUN里。不要用RUN当作shell命令去写。</p>
+
+<p>如：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RUN yarn <span class="nb">install
+</span>RUN yarn build
+</code></pre></div></div>
+<p>可以修改为：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RUN yarn <span class="nb">install</span> <span class="o">&amp;&amp;</span> yarn build
+<span class="c"># 如果指令长，可以换行和缩进</span>
+RUN yarn <span class="nb">install</span> <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> yarn build
+</code></pre></div></div>
+
+<p>最后也是需要记住的重要的事情是需要在每一层的构建后需要清理掉与镜像无关的文件内容。</p>
+
+<h3 id="构建镜像">构建镜像</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> nginx:v3 <span class="nb">.</span>
+
+Sending build context to Docker daemon  2.048kB <span class="c"># 发送构建的上下文到docker引擎（上下文为命令中的 .）</span>
+Step 1/2 : FROM nginx
+latest: Pulling from library/nginx
+33847f680f63: Pull <span class="nb">complete 
+</span>dbb907d5159d: Pull <span class="nb">complete 
+</span>8a268f30c42a: Pull <span class="nb">complete 
+</span>b10cf527a02d: Pull <span class="nb">complete 
+</span>c90b090c213b: Pull <span class="nb">complete 
+</span>1f41b2f2bf94: Pull <span class="nb">complete 
+</span>Digest: sha256:8f335768880da6baf72b70c701002b45f4932acae8d574dedfddaf967fc3ac90
+Status: Downloaded newer image <span class="k">for </span>nginx:latest
+ <span class="nt">---</span><span class="o">&gt;</span> 08b152afcfae
+Step 2/2 : RUN <span class="nb">echo</span> <span class="s1">'&lt;h1&gt;Hello, Docker!&lt;/h1&gt;'</span> <span class="o">&gt;</span> /usr/share/nginx/html/index.html
+ <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>24875d44bcc4
+Removing intermediate container 24875d44bcc4
+ <span class="nt">---</span><span class="o">&gt;</span> a79570bc2fc7
+Successfully built a79570bc2fc7
+Successfully tagged nginx:v3
+</code></pre></div></div>
+
+<p>构建完成之后，可以通过<code class="language-plaintext highlighter-rouge">docker image ls</code>查看构建好的镜像</p>
+
+<p>运行构建的镜像：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-P</span> nginx:v3
+<span class="c"># 查看ip+端口就可以看到Hello, Docker!</span>
+</code></pre></div></div>
+
+<h3 id="镜像构建上下文context">镜像构建上下文（context）</h3>
+
+<p><code class="language-plaintext highlighter-rouge">docker build -t nginx:v3 .</code></p>
+
+<p>上面这条命令，最后的这个<code class="language-plaintext highlighter-rouge">.</code>就是构建此次镜像的上下文。指定这个上下文的作用是让其他的指令，如COPY、ADD等可以正确的处理文件内容。</p>
+
+<p>docker build命令执行时，会将这个上下文路径内的所有内容进行打包，上传到docker引擎中，docker引擎在后续就可以得到处理构建镜像过程的所有文件内容。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>COPY ./package.json /app/
+</code></pre></div></div>
+
+<p>这个命令不是复制文件的命令，意在复制上下文（/APP/）目录下的package.json文件。</p>
+
+<ul>
+  <li>.dockerignore</li>
+</ul>
+
+<p>如果在上下文中的一些文件不需要/不想被发送到docker引擎，可以使用<code class="language-plaintext highlighter-rouge">.dockerignore</code>忽略。</p>
+
+<h3 id="docker-build-使用">docker build 使用</h3>
+
+<ul>
+  <li>从git仓库进行构建</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> <span class="o">[</span>IMAGE NAME] <span class="o">[</span>REPO URL]
+</code></pre></div></div>
+
+<h3 id="dockerfile-指令">Dockerfile 指令</h3>
+
+<ul>
+  <li>COPY 文件复制</li>
+</ul>
+
+<p>COPY 指令将从构建上下文目录中 <源路径> 的文件/目录复制到新的一层的镜像内的 <目标路径> 位置。</目标路径></源路径></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>COPY package.json /usr/src/app <span class="c"># 从构建上下文目录中的package.json复制到/usr/src/app中</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ADD 高级的文件复制</li>
+</ul>
+
+<p>和COPY差不多的一致，在COPY的基础上增加了自动解压缩等的功能。</p>
+
+<ul>
+  <li>CMD 容器启动命令，用于指定默认的容器主进程的启动命令的。</li>
+</ul>
+
+<p>一般推荐使用exec格式，注意要使用双引号。</p>
+
+<ul>
+  <li>
+    <p>ENTRYPOINT 目的和CMD一样，都是在指定容器启动程序及参数。</p>
+  </li>
+  <li>
+    <p>ENV 用于设置环境变量。无论后面的其他指令还是运行时的应用，都可以直接使用这里定义的环境变量。</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ENV <span class="nv">VERSION</span><span class="o">=</span>1.0
+RUN curl <span class="s2">"https://</span><span class="nv">$VERSION</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>ARG 构建参数 = 默认值</li>
+</ul>
+
+<p>构建参数和ENV的效果是一样的，都是设置环境变量。不过ARG设置的构建环境变量在将来容器运行时是不会存在的。ARG指令有生效范围，在FORM指令前指定，只能用于FORM指令中。</p>
+
+<ul>
+  <li>VOLUME 匿名卷</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VOLUME /data
+</code></pre></div></div>
+
+<p>在容器运行时自动挂载匿名卷，任何向/data中写入的信息都不会记录进容器的存储层，保证容器存储层无状态化。</p>
+
+<p>覆盖挂载：可以在运行容器时覆盖该挂载设置：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-v</span> mydata:/data xxxx
+</code></pre></div></div>
+
+<p>在这行命令中，就使用了 mydata 这个命名卷挂载到了 /data 这个位置，替代了 Dockerfile 中定义的匿名卷的挂载配置。</p>
+
+<ul>
+  <li>EXPOSE 暴露端口</li>
+</ul>
+
+<p>只作端口声明。作用：</p>
+
+<ol>
+  <li>帮助镜像使用者理解镜像所需要的配置端口。</li>
+  <li>运行时会自动随机映射EXPOSE端口。</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-P</span>
+</code></pre></div></div>
+
+<ul>
+  <li>WORKDIR 指定工作目录</li>
+</ul>
+
+<p>在两条RUN指令中，都是完全不同的容器，如果第二条RUN指令用到第一条指令的内容，可能会出现错误。</p>
+
+<p>例如目录：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dockerfile
+app
+  - package.json
+</code></pre></div></div>
+<p>在Dockerfile中</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RUN <span class="nb">cd </span>app
+RUN yarn <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>以上指令会出现错误，因为第一条RUN和第二条RUN完全没有关联。如果需要关联，可能需要用到WORKDIR指令。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WORKDIR /app
+RUN yarn <span class="nb">install</span>
+</code></pre></div></div>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/dockerfile" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>小程序egg后台简要文档 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="小程序egg后台简要文档" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如果不需要后端java或者其他语言支持，对于小型的小程序后台，可以使用eggjs框架快速搭建简要的数据后台。" />
+<meta property="og:description" content="如果不需要后端java或者其他语言支持，对于小型的小程序后台，可以使用eggjs框架快速搭建简要的数据后台。" />
+<link rel="canonical" href="https://gzhiyi.top/mp-egg" />
+<meta property="og:url" content="https://gzhiyi.top/mp-egg" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-06T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="小程序egg后台简要文档" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-06-06T20:00:00+08:00","datePublished":"2019-06-06T20:00:00+08:00","description":"如果不需要后端java或者其他语言支持，对于小型的小程序后台，可以使用eggjs框架快速搭建简要的数据后台。","headline":"小程序egg后台简要文档","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/mp-egg"},"url":"https://gzhiyi.top/mp-egg"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">小程序egg后台简要文档</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-06-06T20:00:00+08:00" itemprop="datePublished">2019-06-06 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>如果不需要后端java或者其他语言支持，对于小型的小程序后台，可以使用eggjs框架快速搭建简要的数据后台。</p>
+
+<p>如果未接触过node编写接口，首先还是需要基本过一下<a href="https://eggjs.org/zh-cn/intro/">egg官方文档</a>，至少得把快速入门看完。</p>
+
+<p>不会从头开始把每一步都详细写下来，只针对微信对接的一些处理列出来。</p>
+
+<h2 id="数据库">数据库</h2>
+
+<p>使用mongo，示例通过<a href="https://github.com/eggjs/egg-mongoose">egg-mongoose</a>进行连接处理。</p>
+
+<p>安装插件后，在<code class="language-plaintext highlighter-rouge">/config/plugin.js</code>进行基本配置：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mongoose</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">enable</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="kr">package</span><span class="p">:</span> <span class="dl">'</span><span class="s1">egg-mongoose</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>在<code class="language-plaintext highlighter-rouge">/config/config.default.js</code>文件中配置mongodb的连接（保证本地测试环境数据库连接好）：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// connect mongo</span>
+  <span class="nx">config</span><span class="p">.</span><span class="nx">mongoose</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">client</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mongodb://127.0.0.1/fulishe</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">options</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>在<code class="language-plaintext highlighter-rouge">/app/models</code>文件夹编写相关的model，在程序运行时会自动在mongo上创建对应的表。也可以优先创建好数据库和表设计等。</p>
+
+<h2 id="编写接口">编写接口</h2>
+
+<p>在<code class="language-plaintext highlighter-rouge">controller</code>写主要的业务逻辑，接受接口请求参数并返回。
+对于入参，需要进行验证的可以做验证处理，需要处理返回结果，即使请求出错也不要返回非200的状态码。
+可以将处理结果设置为一个函数，如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// data: 返回给前端的数据，code: 状态，1为成功，0为失败，message：状态信息</span>
+<span class="nx">formatResponse</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">code</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">code</span><span class="p">,</span>
+    <span class="nx">data</span><span class="p">,</span>
+    <span class="nx">message</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>!&gt; 为避免出现出现问题而导致程序中断，最好在每一个容易出现问题的地方进行<code class="language-plaintext highlighter-rouge">try catch</code>将异常抛出并返回到前端。</p>
+
+<p>在<code class="language-plaintext highlighter-rouge">service</code>编写数据库操作函数等，通过在<code class="language-plaintext highlighter-rouge">controller</code>进行调用，统一管理数据库数据进出。
+注意在数据新增的时候需要进行<code class="language-plaintext highlighter-rouge">save</code>操作：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">addUser</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">ctx</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">Users</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="nx">addUser</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span> <span class="c1">// 不要遗漏</span>
+</code></pre></div></div>
+
+<p>相关的增删改查操作，需要直接点的可以看仓库<code class="language-plaintext highlighter-rouge">app/service</code>下的写法。</p>
+
+<h2 id="小程序接口相关">小程序接口相关</h2>
+
+<p>以下是eggjs对小程序包括获取openId、获取unionId、获取手机号码、判断用户是否关注公众号、客服信息发送进行编写说明。<br />
+如果某个对象不知道是什么，一般都是可以根据名字找到对于的js文件或者通过npm引入，不再表述引入什么了。</p>
+
+<h3 id="获取openid">获取openId</h3>
+
+<p>参数说明：</p>
+
+<ul>
+  <li>APPID： 小程序的appId</li>
+  <li>SECRET： 小程序的secret，跟appId在同一个地方能找到</li>
+  <li>CODE：小程序在前端通过wx.login()获取的jscode</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">openIdRes</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">rp</span><span class="p">(</span><span class="s2">`https://api.weixin.qq.com/sns/jscode2session?appid=</span><span class="p">${</span><span class="nx">APPID</span><span class="p">}</span><span class="s2">&amp;secret=</span><span class="p">${</span><span class="nx">SECRET</span><span class="p">}</span><span class="s2">&amp;js_code=</span><span class="p">${</span><span class="nx">CODE</span><span class="p">}</span><span class="s2">&amp;grant_type=authorization_code`</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">openId</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">openIdRes</span><span class="p">).</span><span class="nx">openId</span> <span class="c1">// 在处理错误判断后，返回的数据是json字符串，需要转化</span>
+</code></pre></div></div>
+
+<h3 id="获取unionid">获取unionId</h3>
+
+<p>unionId，属于微信端通用的账号唯一标识，举个例子就是同一个微信号，唯一对应一个unionId。而在每一个小程序上，用户openId都不一样。可以用于判断在小程序上的用户是否关注公众号等。</p>
+
+<p>在第一个获取<code class="language-plaintext highlighter-rouge">openId</code>的时候，会返回<code class="language-plaintext highlighter-rouge">openId</code>以及<code class="language-plaintext highlighter-rouge">session_key</code>，通过小程序前端传过来的<code class="language-plaintext highlighter-rouge">encryptedData</code>以及<code class="language-plaintext highlighter-rouge">iv</code>就可以拿到<code class="language-plaintext highlighter-rouge">unionId</code>。</p>
+
+<p>参数说明：</p>
+
+<ul>
+  <li>APPID： 小程序的appId</li>
+  <li>sessionKey：获取openId的时候，一并返回了sessionKey</li>
+  <li>encryptedData：小程序在前端通过获取用户信息返回</li>
+  <li>iv：小程序在前端通过获取用户信息返回</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">pc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WXBizDataCrypt</span><span class="p">(</span><span class="nx">APPID</span><span class="p">,</span> <span class="nx">sessionKey</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">pc</span><span class="p">.</span><span class="nx">decryptData</span><span class="p">(</span><span class="nx">encryptedData</span><span class="p">,</span> <span class="nx">iv</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">unionId</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">unionId</span>
+</code></pre></div></div>
+
+<h3 id="获取手机号码">获取手机号码</h3>
+
+<p>获取手机号码的步骤跟获取unionId一样。</p>
+
+<p>只需要注意的是，<code class="language-plaintext highlighter-rouge">encryptedData</code>、<code class="language-plaintext highlighter-rouge">iv</code>是在小程序端通过<code class="language-plaintext highlighter-rouge">getPhoneNumber</code>获取。</p>
+
+<h3 id="判断用户是否关注公众号">判断用户是否关注公众号</h3>
+
+<p>这里单独在小程序后台无法判断。需要在对于的公众号后台提供一个接口用于判断该unionId是否已经关注了公众号。</p>
+
+<h3 id="客服信息发送">客服信息发送</h3>
+
+<p>在小程序开发设置中配置消息推送。</p>
+
+<p>配置参考：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>值</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>URL(服务器地址)</td>
+      <td>https://<em>.</em>.com/message/check</td>
+      <td>微信那边与你服务器通信的接口</td>
+    </tr>
+    <tr>
+      <td>Token(令牌)</td>
+      <td>isToken</td>
+      <td>自定义</td>
+    </tr>
+    <tr>
+      <td>EncodingAESKey(消息加密密钥)</td>
+      <td><strong>**</strong></td>
+      <td>填写那可以自动生成</td>
+    </tr>
+    <tr>
+      <td>消息加密方式</td>
+      <td>兼容模式</td>
+      <td>涉及信息安全</td>
+    </tr>
+    <tr>
+      <td>数据格式</td>
+      <td>JSON</td>
+      <td>一般是这个吧</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>在<code class="language-plaintext highlighter-rouge">controller</code>层编写一个<code class="language-plaintext highlighter-rouge">get</code>接口，对应<code class="language-plaintext highlighter-rouge">/message/check</code>，用以给微信进行服务器验证。
+完整验证函数接口可如下：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="nx">index</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">ctx</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span>
+  <span class="c1">// 1.获取微信服务器Get请求的参数 signature、timestamp、nonce、echostr</span>
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="nx">signature</span><span class="p">,</span>
+    <span class="nx">timestamp</span><span class="p">,</span>
+    <span class="nx">nonce</span><span class="p">,</span>
+    <span class="nx">echostr</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span>
+
+  <span class="c1">// 2.将token、timestamp、nonce三个参数进行字典序排序</span>
+  <span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">线上配置的令牌</span><span class="dl">'</span><span class="p">,</span> <span class="nx">timestamp</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">]</span>
+  <span class="nx">array</span><span class="p">.</span><span class="nx">sort</span><span class="p">()</span> <span class="c1">// JavaScript sort函数就是字典序排序的</span>
+
+  <span class="c1">// 3.将三个参数字符串拼接成一个字符串进行sha1加密</span>
+  <span class="kd">const</span> <span class="nx">tempStr</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">hashCode</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHash</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha1</span><span class="dl">'</span><span class="p">)</span> <span class="c1">//创建加密类型</span>
+  <span class="kd">const</span> <span class="nx">resultCode</span> <span class="o">=</span> <span class="nx">hashCode</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">tempStr</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">hex</span><span class="dl">'</span><span class="p">)</span>
+
+  <span class="c1">// 4.开发者获得加密后的字符串可与signature对比，标识该请求来源于微信</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">resultCode</span> <span class="o">===</span> <span class="nx">signature</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">echostr</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// 非微信服务器请求</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">formatResponse</span><span class="p">({</span>
+      <span class="nx">resultCode</span><span class="p">,</span>
+      <span class="na">req</span><span class="p">:</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span>
+    <span class="p">},</span> <span class="mi">0</span><span class="p">,</span> <span class="dl">'</span><span class="s1">验证失败1</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>自动回复操作：
+在<code class="language-plaintext highlighter-rouge">controller</code>层编写一个<code class="language-plaintext highlighter-rouge">post</code>接口，对应<code class="language-plaintext highlighter-rouge">/message/check</code>，用于自动回复。
+完整处理自动回复接口：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="nx">handle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">ctx</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">FromUserName</span><span class="p">,</span> <span class="nx">MsgType</span><span class="p">,</span> <span class="nx">Content</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">body</span> <span class="c1">// 这是从微信转发过来的用户发送的信息参数</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">openid</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span>
+  <span class="c1">// 获取accessToken</span>
+  <span class="kd">const</span> <span class="nx">tokenRes</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">rp</span><span class="p">(</span><span class="s2">`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=</span><span class="p">${</span><span class="nx">CONST</span><span class="p">.</span><span class="nx">appId</span><span class="p">}</span><span class="s2">&amp;secret=</span><span class="p">${</span><span class="nx">CONST</span><span class="p">.</span><span class="nx">secret</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="dl">'</span><span class="s1">errcode</span><span class="dl">'</span> <span class="k">in</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokenRes</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">MsgType</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">text</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">postData</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">touser</span><span class="p">:</span> <span class="nx">openid</span><span class="p">,</span>
+        <span class="na">msgtype</span><span class="p">:</span> <span class="dl">"</span><span class="s2">link</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">link</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">链接标题</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">description</span><span class="p">:</span> <span class="dl">'</span><span class="s1">链接描述</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">链接</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">thumb_url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">链接封面图</span><span class="dl">'</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="kd">const</span> <span class="nx">sendRes</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">rp</span><span class="p">({</span>
+        <span class="na">uri</span><span class="p">:</span> <span class="s2">`https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=</span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">tokenRes</span><span class="p">).</span><span class="nx">access_token</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">body</span><span class="p">:</span> <span class="nx">postData</span><span class="p">,</span>
+        <span class="na">json</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">})</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">ctx</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>!&gt; 注意：需要在自动回复的最后返回<code class="language-plaintext highlighter-rouge">success</code>，否则会在聊天窗口看到提示：<code class="language-plaintext highlighter-rouge">该小程序提供的服务出现故障，请稍后再试</code></p>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/mp-egg" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

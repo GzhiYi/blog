@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>防盗链的解析 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="防盗链的解析" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="前言" />
+<meta property="og:description" content="前言" />
+<link rel="canonical" href="https://gzhiyi.top/anti-theft" />
+<meta property="og:url" content="https://gzhiyi.top/anti-theft" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-15T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="防盗链的解析" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-10-15T20:00:00+08:00","datePublished":"2018-10-15T20:00:00+08:00","description":"前言","headline":"防盗链的解析","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/anti-theft"},"url":"https://gzhiyi.top/anti-theft"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">防盗链的解析</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-15T20:00:00+08:00" itemprop="datePublished">2018-10-15 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 id="前言">前言</h3>
+
+<p>最近涉及到了图片防盗链的问题，链接是特殊的，不能被其他网站解析为图片。说下来有几种办法，当然解决后发现还是最后那种简单便捷。唯一的缺点就是大概也许差不多可能无法访问到。这个没关系，只要保佑保佑，总会比加iframe轻松愉悦的。</p>
+
+<p>首先，你看到的图片会是这样的：</p>
+
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/cfehZicXpD0ib9BP0iafksSmxPcWm4ORDGkD5ibHIHeWSyWjHriaFGhHLFvZNwiau4icCOBvT56MktVFATAf1D8vuyOHw/0?wx_fmt=jpeg" alt="例图" /></p>
+
+<p>实际上，如果你能看到上面这张图，说明你骨骼精奇，自带解锁功能。
+但是我们想直接看到：</p>
+
+<p><img src="https://images.weserv.nl/?url=//mmbiz.qpic.cn/mmbiz_jpg/cfehZicXpD0ib9BP0iafksSmxPcWm4ORDGkD5ibHIHeWSyWjHriaFGhHLFvZNwiau4icCOBvT56MktVFATAf1D8vuyOHw/0?wx_fmt=jpeg" alt="例图" /></p>
+
+<p>那怎么做呢？</p>
+
+<h3 id="页面头部加入标签">页面头部加入<mate>标签</mate></h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"referrer"</span> <span class="na">content=</span><span class="s">"never"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>这种办法通过控制referer绕过防盗链的检测。html可以通过这个参数决定http请求中的referer，要注意使用这个标签属性的时候，浏览器原有的referer策略就发生改变了。</p>
+
+<h3 id="图片在iframe内显示">图片在iframe内显示</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">url</span><span class="o">=</span><span class="dl">'</span><span class="s1">防盗的链接</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">finalUrl</span> <span class="o">=</span> <span class="nx">displayImg</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finalUrl</span><span class="p">);</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">img</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">finalUrl</span><span class="p">;</span>
+
+<span class="nx">displayImg</span> <span class="o">=</span> <span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">iFrameid</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">frameimg</span><span class="dl">'</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">();</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">img</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;img id="img" src=</span><span class="se">\'</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">?</span><span class="dl">'</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="se">\'</span><span class="s1"> /&gt;</span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">&lt;iframe id="</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">iFrameid</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">" src="javascript:parent.img;" frameBorder="0" scrolling="no" width="100%"&gt;&lt;/iframe&gt;</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>这样可以正常显示图片，除了多了iframe外也没啥太大的问题，但是我发现在Vue里面一旦数据更新iframe就会刷新，外加上插件vue-draggable没法用了所以我就放弃这个方法了。这也促使我找更好的方案👇。</p>
+
+<h3 id="传送门--跳板">传送门 | 跳板</h3>
+
+<p>所以最后我还是找到了一个好的方法，搜索引擎下，发现大部分的跳板都被清理了。不要慌，总会有的，对于怎么找到这个跳板的话，我的建议是怎么不去对比一下开头的两张图？😄😄😄</p>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/anti-theft" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

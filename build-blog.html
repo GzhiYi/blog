@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>用sapper构建一个博客 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="用sapper构建一个博客" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="发现自己好久没有写博客了。之前在github开了一个仓库，在仓库的issue区写一些内容。issue区体验挺好的，可以refer上项目代码，也可以追加评论。但我想自己写一个博客，不需要很多花里胡哨的功能，只对内容专注，极大的好处是，可以随心所欲的编写自己喜欢的页面样式。刚好最近有接触了下svelte，就顺带的用sapper写一个静态页面。" />
+<meta property="og:description" content="发现自己好久没有写博客了。之前在github开了一个仓库，在仓库的issue区写一些内容。issue区体验挺好的，可以refer上项目代码，也可以追加评论。但我想自己写一个博客，不需要很多花里胡哨的功能，只对内容专注，极大的好处是，可以随心所欲的编写自己喜欢的页面样式。刚好最近有接触了下svelte，就顺带的用sapper写一个静态页面。" />
+<link rel="canonical" href="https://gzhiyi.top/build-blog" />
+<meta property="og:url" content="https://gzhiyi.top/build-blog" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-20T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="用sapper构建一个博客" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-20T20:00:00+08:00","datePublished":"2020-06-20T20:00:00+08:00","description":"发现自己好久没有写博客了。之前在github开了一个仓库，在仓库的issue区写一些内容。issue区体验挺好的，可以refer上项目代码，也可以追加评论。但我想自己写一个博客，不需要很多花里胡哨的功能，只对内容专注，极大的好处是，可以随心所欲的编写自己喜欢的页面样式。刚好最近有接触了下svelte，就顺带的用sapper写一个静态页面。","headline":"用sapper构建一个博客","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/build-blog"},"url":"https://gzhiyi.top/build-blog"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">用sapper构建一个博客</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-06-20T20:00:00+08:00" itemprop="datePublished">2020-06-20 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>发现自己好久没有写博客了。之前在github开了一个仓库，在仓库的<a href="https://github.com/GzhiYi/blog/issues">issue区</a>写一些内容。issue区体验挺好的，可以refer上项目代码，也可以追加评论。但我想自己写一个博客，不需要很多花里胡哨的功能，只对内容专注，极大的好处是，可以随心所欲的编写自己喜欢的页面样式。刚好最近有接触了下<a href="https://svelte.dev/">svelte</a>，就顺带的用<a href="https://sapper.svelte.dev/">sapper</a>写一个静态页面。</p>
+
+<p>实现需要用到的知识点/技术：</p>
+
+<ol>
+  <li>svelte</li>
+  <li>sapper</li>
+  <li>tailwindcss</li>
+  <li>typescript</li>
+</ol>
+
+<p>后面两点非必须，可以根据自己需要进行增减。</p>
+
+<h2 id="思路">思路</h2>
+<p>整体的思路比较简单。</p>
+
+<p>sapper支持export出静态文件，我只需要将静态文件部署到一个静态站点，首选的就是github pages。sapper导出export有一个好处：</p>
+
+<blockquote>
+  <p>Static doesn’t mean non-interactive — your Svelte components work exactly as they do normally, and you still get all the benefits of client-side routing and prefetching.</p>
+</blockquote>
+
+<p>sapper默认的template就是一个blog，这不是刚好可以拿来起手嘛！但默认的template的 blog内容是固定的数据，大致内容是一个js文件，export一个blog的array。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-06/build-blog.md</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">slug</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020-06_build-blog</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 生成的路由路径</span>
+    <span class="na">html</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;h1 id=</span><span class="se">\</span><span class="s1">"用sapper构建一个博客</span><span class="se">\</span><span class="s1">"&gt;用sapper构建一个博客&lt;/h1&gt;</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>在sapper export之后，可以在<code class="language-plaintext highlighter-rouge">__sapper__/export/blog</code>看到生成html静态文件。也就意味着最后需要部署到github pages的目录，就是<code class="language-plaintext highlighter-rouge">__sapper__</code>目录啦。</p>
+
+<p><strong>可如果要写博客，那肯定也优先选择Markdown。</strong></p>
+
+<p>所以需要解决的也就是将Markdown文件转为上面提到的js文件。</p>
+
+<h2 id="将markdown转为js文件">将Markdown转为js文件</h2>
+
+<p>需要用到<a href="https://github.com/markedjs/marked">Markedjs</a>。</p>
+
+<p>使用也是简单粗暴：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">marked</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">marked</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">marked</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+  <span class="na">renderer</span><span class="p">:</span> <span class="k">new</span> <span class="nx">marked</span><span class="p">.</span><span class="nx">Renderer</span><span class="p">(),</span>
+  <span class="na">highlight</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="nx">language</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">hljs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">highlight.js</span><span class="dl">'</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">validLanguage</span> <span class="o">=</span> <span class="nx">hljs</span><span class="p">.</span><span class="nx">getLanguage</span><span class="p">(</span><span class="nx">language</span><span class="p">)</span> <span class="p">?</span> <span class="nx">language</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">plaintext</span><span class="dl">'</span>
+    <span class="k">return</span> <span class="nx">hljs</span><span class="p">.</span><span class="nx">highlight</span><span class="p">(</span><span class="nx">validLanguage</span><span class="p">,</span> <span class="nx">code</span><span class="p">).</span><span class="nx">value</span>
+  <span class="p">},</span>
+  <span class="c1">// ...(more options)</span>
+<span class="p">});</span>
+<span class="nx">marked</span><span class="p">(</span><span class="nx">markdownString</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>例如markdownString为：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*hello world*
+</code></pre></div></div>
+
+<p>将会被转为：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;em&gt;</span>hello world<span class="nt">&lt;/em&gt;&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>知道用法之后，只需要通过fs文件操作，将目标的Markdown文件全部push进一个数组，最后将数组写入一个js文件。</p>
+
+<h2 id="读取markdown并写入文件">读取Markdown并写入文件</h2>
+
+<p>node对操作文件提供了<code class="language-plaintext highlighter-rouge">readir</code>、<code class="language-plaintext highlighter-rouge">readFile</code>、<code class="language-plaintext highlighter-rouge">writeFile</code>等函数。</p>
+
+<p>其中核心的处理逻辑如下：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 获取所有文件</span>
+<span class="kd">const</span> <span class="nx">getAllFiles</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">dirPath</span><span class="p">,</span> <span class="nx">arrayOfFiles</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">files</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="nx">dirPath</span><span class="p">)</span>
+	<span class="nx">arrayOfFiles</span> <span class="o">=</span> <span class="nx">arrayOfFiles</span> <span class="o">||</span> <span class="p">[]</span>
+	<span class="nx">files</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">statSync</span><span class="p">(</span><span class="nx">dirPath</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">file</span><span class="p">).</span><span class="nx">isDirectory</span><span class="p">())</span> <span class="p">{</span>
+			<span class="nx">arrayOfFiles</span> <span class="o">=</span> <span class="nx">getAllFiles</span><span class="p">(</span><span class="nx">dirPath</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">arrayOfFiles</span><span class="p">)</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="nx">arrayOfFiles</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">dirPath</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="nx">file</span><span class="p">))</span>
+		<span class="p">}</span>
+	<span class="p">})</span>
+	<span class="k">return</span> <span class="nx">arrayOfFiles</span>
+<span class="p">}</span>
+<span class="c1">// 将markdown转为js文件</span>
+<span class="kd">const</span> <span class="nx">compile</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="nx">dirs</span> <span class="o">=</span> <span class="nx">getAllFiles</span><span class="p">(</span><span class="dl">'</span><span class="s1">./</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// 读取所有文件</span>
+		<span class="kd">const</span> <span class="nx">inPosts</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">// 文章数组</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">fileName</span> <span class="k">of</span> <span class="nx">dirs</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="sr">/.md/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">fileName</span><span class="p">))</span> <span class="p">{</span>
+				<span class="kd">const</span> <span class="nx">fileData</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">`./</span><span class="p">${</span><span class="nx">fileName</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="dl">'</span><span class="s1">utf-8</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// markdown内容</span>
+				<span class="kd">const</span> <span class="nx">fmData</span> <span class="o">=</span> <span class="nx">fm</span><span class="p">(</span><span class="nx">fileData</span><span class="p">)</span> <span class="c1">// 此处可以忽略fm（fm是处理markdown front matter的，可有可无）</span>
+				<span class="kd">const</span> <span class="nx">rmSuffix</span> <span class="o">=</span> <span class="nx">fileName</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">.</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// 移除文件名后缀</span>
+				<span class="nx">inPosts</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+					<span class="na">title</span><span class="p">:</span> <span class="nx">fileName</span><span class="p">,</span>
+					<span class="na">path</span><span class="p">:</span> <span class="nx">rmSuffix</span><span class="p">,</span>
+					<span class="na">slug</span><span class="p">:</span> <span class="nx">rmSuffix</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">_</span><span class="dl">'</span><span class="p">),</span>
+					<span class="na">html</span><span class="p">:</span> <span class="nx">marked</span><span class="p">(</span><span class="nx">fmData</span><span class="p">.</span><span class="nx">body</span><span class="p">),</span>
+					<span class="nx">fmData</span>
+				<span class="p">})</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="nx">inPosts</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">post</span> <span class="o">=&gt;</span> <span class="p">{</span>
+			<span class="nx">post</span><span class="p">.</span><span class="nx">html</span> <span class="o">=</span> <span class="nx">post</span><span class="p">.</span><span class="nx">html</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">\t{3}</span><span class="sr">/gm</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
+		<span class="p">});</span>
+		<span class="kd">const</span> <span class="nx">outPutContent</span> <span class="o">=</span> <span class="s2">`export default </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">inPosts</span><span class="p">)}</span><span class="s2">`</span>
+		<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="dl">'</span><span class="s1">../routes/blog/_posts.js</span><span class="dl">'</span><span class="p">,</span> <span class="nx">outPutContent</span><span class="p">,</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">生成post失败</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">已生成_posts.js</span><span class="dl">'</span><span class="p">)</span>
+		<span class="p">})</span>
+	<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">watcher</span> <span class="o">=</span> <span class="nx">chokidar</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="dl">'</span><span class="s1">./</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">watcher</span>
+	<span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">all</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+		<span class="nx">compile</span><span class="p">()</span>
+	<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="部署到github-pages">部署到github pages</h2>
+
+<p>对于sapper，执行export命令生成静态文件。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">export</span>
+</code></pre></div></div>
+
+<p>将<code class="language-plaintext highlighter-rouge">__sapper__/export</code>推送到仓库的gh-pages分支。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git subtree push <span class="nt">--prefix</span> __sapper__/export origin gh-pages
+</code></pre></div></div>
+
+<p>最后在仓库设置出将gh-pages分支设置为部署分支就好了。</p>
+
+<p>以上完成了从写Markdown到可以看到文章，后续页面的编写就可以随心所欲啦！</p>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/build-blog" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

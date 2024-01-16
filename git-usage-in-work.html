@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>git在工作中的基础 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="git在工作中的基础" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<meta property="og:description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<link rel="canonical" href="https://gzhiyi.top/git-usage-in-work" />
+<meta property="og:url" content="https://gzhiyi.top/git-usage-in-work" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-18T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="git在工作中的基础" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2018-11-18T20:00:00+08:00","datePublished":"2018-11-18T20:00:00+08:00","description":"我是一名 Web 前端工程师。热爱生活，热爱宇宙。","headline":"git在工作中的基础","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/git-usage-in-work"},"url":"https://gzhiyi.top/git-usage-in-work"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">git在工作中的基础</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-11-18T20:00:00+08:00" itemprop="datePublished">2018-11-18 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="https://images.vrm.cn/2018/11/26/banner.png" alt="banner" /></p>
+
+<p>本周四分享会主题：<strong>git在工作中的一些用处</strong>。</p>
+
+<p>git内容有非常多，如果要每个命令都去熟悉和记忆的话，我觉得是没有必要的，掌握基本的用法，在团队合作中能快速定位问题和解决才是重要的。<strong>基本的概念不会多说</strong>，都能在入门教程那些学习到。接下来会说下git在工作中比较常用的功能，会发现，其实git能做的事情还是非常多的。</p>
+
+<h3 id="git在开发中常用的命令">git在开发中常用的命令</h3>
+<p><strong>编辑和代码提交</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 为git初始化一个代码库</span>
+git init
+
+<span class="c"># 将目录的所有文件提交到暂存区</span>
+git add <span class="nb">.</span>
+
+<span class="c"># 提交暂存区到代码仓库区，并添加提交信息</span>
+git commit <span class="nt">-m</span> <span class="s2">"commit message"</span>
+</code></pre></div></div>
+
+<p><strong>分支处理</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># 列出本地所有的分支</span>
+git branch
+
+<span class="c"># 列出远程仓库的所有分支</span>
+git branch <span class="nt">-r</span>
+
+<span class="c"># 列出仓库的所有分支（包含远端和本地分支）</span>
+git branch <span class="nt">-a</span>
+
+<span class="c"># 切换到指定分支，并更新工作区</span>
+git checkout <span class="o">[</span>branchName]
+
+<span class="c"># 新建一个分支并切换到该分支</span>
+git checkout <span class="nt">-b</span> <span class="o">[</span>branchName]
+
+<span class="c"># 删除一个分支</span>
+git branch <span class="nt">-d</span> <span class="o">[</span>branchName]
+
+<span class="c"># 强制删除一个分支</span>
+git branch <span class="nt">-D</span> <span class="o">[</span>branchName]
+</code></pre></div></div>
+
+<p><strong>查看状态信息</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看变更的文件，可多用这个命令查看当前文件改动状态</span>
+git status
+
+<span class="c"># 查看当前分支提交历史，可以得到加密的commit_id</span>
+git log
+
+<span class="c"># 查看暂存区和工作区的对比</span>
+git diff
+</code></pre></div></div>
+
+<p><strong>同步远程仓库</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 同步远程仓库的所有更新</span>
+git fetch <span class="o">[</span>remote]
+
+<span class="c"># 显示所有远程仓库</span>
+git remote <span class="nt">-v</span>
+
+<span class="c"># 增加一个新的远程仓库，并定义一个远程仓库名，shortName常用origin，当然可自定义</span>
+git remote add <span class="o">[</span>shortName] url
+
+<span class="c"># 拉取远端分支，并与本地分支合并</span>
+git pull <span class="o">[</span>remote] <span class="o">[</span>branchName]
+
+<span class="c"># 上传本地分支到远端</span>
+git push <span class="o">[</span>remote] <span class="o">[</span>branchName]
+</code></pre></div></div>
+
+<p><strong>撤销操作</strong></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 恢复暂存区的指定文件到工作区</span>
+git checkout <span class="o">[</span>file]
+
+<span class="c"># 恢复暂存区的所有文件到工作区</span>
+git checkout <span class="nb">.</span>
+
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/21136420/49006081-37a00f80-f1a3-11e8-982e-c02cd71c1495.png" alt="image" /></p>
+
+<p>git工作中常用命令基本可以上图概括。
+<strong>__</strong>__</p>
+
+<p><strong>其它常用的命令</strong>
+单独拿出来说是因为平常知道用的可能不会很多，但实际用起来会非常有用。</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">git stash</code></li>
+</ol>
+
+<p>当你在工作的时候，累计了比较多的改动，但是突然间需要临时切换到其它分支工作，可是又不好把中途工作的内容提交，那怎么办？这时候git stash就有用了。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看文件变更状态</span>
+git status
+
+<span class="c"># 储藏变更，这时候会提示已储藏变更</span>
+git stash
+
+<span class="c"># 当在其它分支工作完回到原来分支的时候，可以查看储藏列表</span>
+git stash list
+
+<span class="c"># 恢复储藏，这时候文件变更就回来了，listNum为列表序号</span>
+git stash apply stash@<span class="o">{</span>listNum<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">git rebase</code></li>
+</ol>
+
+<p>一般我们完成代码后，需要将分支的改动进行整合，会用到合并（merge）操作，但这不是唯一的方式，Rebase就是其中的代替方式。<br />
+先来说说merge。我们在需要合并的时候，会有如下的两种基本情况：</p>
+
+<p><img src="https://images.vrm.cn/2018/11/27/starting-situation-fast-forward.gif" alt="情况1" />
+其中一个分支没有新的改动，而另一个分支却有改动。这个时候进行整合的话，git仅仅只是添加所有改动的分支的新提交即可。</p>
+
+<p><img src="https://images.vrm.cn/2018/11/27/starting-situation-merge-commit.gif" alt="情况2" />
+第二种就是我们开发过程经常遇到的情况，两个分支都有不同的开发轨迹。为了完成合并，git会创建一个新的提交来涵括它们之间的差异，这就是整合提交。</p>
+
+<p>有人不喜欢这个合并的方式，希望项目有一个单一的开发轨迹，在流程上是一条直线，不希望在开发历史记录上看到被分成过多个分支。这时候就可以用到rebase操作了。</p>
+
+<p>我们还是看第一个例子：</p>
+
+<p><img src="https://images.vrm.cn/2018/11/27/starting-situation-fast-forward.gif" alt="情况1" />
+如果我们想合并分支B到A分支上，可以用到下面这个命令：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git rebase branchB
+</code></pre></div></div>
+
+<p>git会进行这样的操作：<br />
+“撤销”所有分支A上与分支B开发分叉后的更改，这并不是真的checkout掉更改，后面还会用到。
+<img src="https://images.vrm.cn/2018/11/27/rebase-step-1.gif" alt="rebase1" /></p>
+
+<p>然后它将整合分支B上的提交到A上，这要看，分支A和分支B就会像一条线一样。
+<img src="https://images.vrm.cn/2018/11/27/rebase-step-2.gif" alt="rebase2" /></p>
+
+<p>最后，在分支A上的那些新的提交会被重新应用回来。
+<img src="https://images.vrm.cn/2018/11/27/rebase-step-3.gif" alt="rebase3" /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">git reset</code>和<code class="language-plaintext highlighter-rouge">git revert</code></li>
+</ol>
+
+<p>开发期间难免会有提交出错代码的情况，如何进行版本回退呢？git reset命令就派上用场了.</p>
+<ul>
+  <li>git reset 为重置提交，可以将版本回退到某一个commit记录上。git reset 命令后面是需要加2种参数的：–-hard 和 –-soft。这条命令默认情况下是 -–soft。<br />
+<strong>区别：</strong></li>
+</ul>
+
+<p>默认参数 -soft,所有commit的修改都会退回到git暂存区。
+参数–hard，所有commit的修改直接丢弃，小心用。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="nt">--hard</span> commit_id
+git push origin <span class="o">[</span>branchName] <span class="nt">--force</span>
+</code></pre></div></div>
+<p>当然如果–hard错了，也还有救，<code class="language-plaintext highlighter-rouge">git reflog</code>命令记录你的所有git操作，能获取到原有的移除掉的commit_id。</p>
+
+<ul>
+  <li>git revert 为还原提交，可以将某个commit还原然后创建一个新的还原commit。字面意思已经很好理解了。比如：</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 某个commit的文件a增加两行文字</span>
+
+git revert commit_id
+
+<span class="c"># 执行该命令后，还原了这个commit文件a的更改，新增一个revert的commit，更改为增加的两行文字被移除。</span>
+</code></pre></div></div>
+
+<h3 id="git工作流">git工作流</h3>
+
+<p>这里只说下最广泛应用的git工作流，也就是git flow。<br />
+在开发的初期，我们定两个分支：</p>
+
+<ul>
+  <li><strong>主分支master</strong></li>
+  <li><strong>开发分支develop</strong></li>
+</ul>
+
+<p>规定，master分支为版本发布的分支，提供上线的版本。develop分支为日常开发分支，存放最新的开发版本。一般的develop分支会切出如下的三个短期分支：</p>
+
+<ol>
+  <li>功能分支（feature）</li>
+  <li>修bug分支（hotfix或者fix）</li>
+  <li>预发布分支（release）</li>
+</ol>
+
+<p><strong>还有其它工作流？</strong></p>
+
+<p>当然有！下面就继续说一个挺不错的工作流：</p>
+
+<blockquote>
+  <p>功能分支工作流</p>
+</blockquote>
+
+<p>这个工作流的核心思路是所有的功能开发都应该独立一个分支，而主分支一样是master。这样的隔离开发不会扰乱主分支上的代码，也能保证主分支的代码准确无误。</p>
+
+<p>这种方式让pull request变得更加有效果。过多的就不解释，通过一个例子看看这个工作流到底是如何工作的。</p>
+
+<p><strong>小红开始开发一个新功能</strong><br />
+理所当然，从master切出一个独立功能分支：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> feature-new master
+</code></pre></div></div>
+
+<p>持续打码，中途完成部分:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+git add <span class="o">[</span>file]
+git commit <span class="nt">-m</span> <span class="s1">'xxx'</span>
+</code></pre></div></div>
+
+<p><strong>中午去吃个饭</strong><br />
+在吃午饭前，小红把自己的功能分支推到了远端仓库。好习惯，多学习。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin feature-new
+</code></pre></div></div>
+
+<p><strong>小红完成开发</strong>
+在合并之前，小红保证远端仓库有自己功能分支的最新代码。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin feature-new
+</code></pre></div></div>
+
+<p>接下来，可以发起一个合并请求，在github或者gitlab都有快捷的合并请求操作。合并功能分支feature-new到master。发起后，团队都可以收到合并请求的通知。</p>
+
+<p>这时候团队可以code review，有问题就可以继续提示小红去修正。</p>
+
+<p>修正后小红可以持续推代码到功能分支，commit记录也会一并出现在pull request处。</p>
+
+<p><strong>小红发布功能</strong><br />
+经过紧张的讨论修改，终于完成功能开发，要发布功能：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout master
+git pull
+git pull origin feature-new
+git push
+</code></pre></div></div>
+<p>完毕。</p>
+
+<h3 id="还能怎么发挥git作用">还能怎么发挥git作用？</h3>
+
+<p><strong>webhooks</strong></p>
+
+<p>根据github的介绍，webhooks可以通过使用github的事件被触发时通过http post的形式调用服务器上的接口，服务器接受到推送事件之后就可以执行构建，更新项目代码，进而部署生产服务器等等。</p>
+
+<blockquote>
+  <p>这一切能限制的只有你的想象力。</p>
+</blockquote>
+
+<p>一般而言，比如说我部署一个node程序到服务器上需要怎么操作？</p>
+
+<ol>
+  <li>
+    <p>本地代码开发完毕，准备上线，上传本地代码到git远端仓库。</p>
+  </li>
+  <li>
+    <p>ssh连接远程服务器，登录管理员账号密码后进入命令行界面。</p>
+  </li>
+  <li>
+    <p>进入项目目录，拉取最新提交的代码。</p>
+  </li>
+  <li>
+    <p>执行部署操作。</p>
+  </li>
+  <li>
+    <p>需要代码更新，重复此操作。</p>
+  </li>
+</ol>
+
+<p><strong>而我通过webhooks之后，这些操作得到很大的简化。</strong></p>
+
+<ol>
+  <li>配置webhooks的push事件，因为我要在本地push代码后执行后续操作。</li>
+</ol>
+
+<p><img src="https://user-images.githubusercontent.com/21136420/49086433-78755280-f28f-11e8-98ee-a1279e427c8e.png" alt="image" /></p>
+
+<ol>
+  <li>在服务器上编写一个自动部署脚本，这里举个简单的脚本<code class="language-plaintext highlighter-rouge">deploy.sh</code>。</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#！/bin/bash</span>
+<span class="nb">echo</span> <span class="s1">'enter project'</span>
+<span class="nb">cd</span> <span class="o">[</span>your project <span class="nb">dir</span><span class="o">]</span>
+
+<span class="nb">echo</span> <span class="s1">'pull code'</span>
+git pull origin master
+
+<span class="nb">echo</span> <span class="s1">'deploy'</span>
+pm2 start deploy.js
+pm2 logs deploy
+
+<span class="nb">echo</span> <span class="s1">'deploy finished'</span>
+</code></pre></div></div>
+
+<ol>
+  <li>用node写一个监听接口，不一定要node，只要能跑出个接口能监听到事件即可。需要提到：</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">createHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-github-webhook</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/hook</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">secret</span><span class="p">:</span> <span class="dl">'</span><span class="s1">your srcret</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="nx">createHandler</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="p">...</span>
+
+<span class="nx">handler</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">push</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">execFunc</span><span class="p">(</span><span class="dl">'</span><span class="s1">sh ./deploy.sh</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">})</span>
+
+</code></pre></div></div>
+<p>这里的path和secret都需要在github webhooks那边对应配置上。</p>
+
+<ol>
+  <li>完成之后，一旦代码提交到master的话，就会触发事件，然后自动执行后续操作。</li>
+</ol>
+
+<h3 id="git工具推荐">git工具推荐</h3>
+
+<p>有几个个人认为不错的git工具或者项目可以提高git的使用。</p>
+
+<ol>
+  <li><a href="https://github.com/github/gitignore">gitignore</a>。在项目根目录新建一个<code class="language-plaintext highlighter-rouge">.gitignore</code>文件，将不需要提交到git上的文件路径添加到这个文件。在这个项目中可以快速找到自己所属项目的通用gitignore文件</li>
+</ol>
+
+<p><img src="https://images.vrm.cn/2018/11/27/微信截图_20181127222540.png" alt="gitignore" /></p>
+
+<ol>
+  <li>[<code class="language-plaintext highlighter-rouge">VS Code</code>] gitignore。可以右键将文件夹或者文件添加到.gitignore文件中。</li>
+</ol>
+
+<p><img src="https://images.vrm.cn/2018/11/27/微信截图_20181127222733.png" alt="gitignore" /></p>
+
+<ol>
+  <li>[<code class="language-plaintext highlighter-rouge">VS Code</code>] GitLens。可以让每一行代码都显示历史记录等。</li>
+</ol>
+
+<p><img src="https://images.vrm.cn/2018/11/27/微信截图_20181127223043.png" alt="Gitlens" /></p>
+
+<ol>
+  <li>[<code class="language-plaintext highlighter-rouge">Chrome</code>] octotree。浏览github上的代码更加轻松便捷。</li>
+</ol>
+
+<p><img src="https://images.vrm.cn/2018/11/27/微信截图_20181127223252.png" alt="octotree" /></p>
+
+<ol>
+  <li>Sourcetree。git图形界面工具，讲了那么多命令应该可以不用图形界面了吧😀。
+<img src="https://images.vrm.cn/2018/11/28/微信截图_20181128215137.png" alt="sourcetree" /></li>
+</ol>
+
+<h3 id="最后">最后</h3>
+<p>分享内容大概如此了，欢迎补充，也希望内容有些帮助。😄</p>
+
+<blockquote>
+  <p>参考
+<a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">Rebase 代替合并 </a>
+<a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html">git 工作流-阮老师的</a>
+<a href="https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md">git 工作流</a></p>
+</blockquote>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/git-usage-in-work" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

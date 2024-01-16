@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Docker的一些需记基础命令和用法 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Docker的一些需记基础命令和用法" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="由于docker目前在项目中用的比较少，慢慢在写项目的过程中，有一些命令会被我遗忘掉。所以我把一些基础常用的docker命令列下来，方便自己在回顾docker或者重新使用的时候快速运用上。在后续的时间里，也会尽可能的将docker应用到能用上的项目中。" />
+<meta property="og:description" content="由于docker目前在项目中用的比较少，慢慢在写项目的过程中，有一些命令会被我遗忘掉。所以我把一些基础常用的docker命令列下来，方便自己在回顾docker或者重新使用的时候快速运用上。在后续的时间里，也会尽可能的将docker应用到能用上的项目中。" />
+<link rel="canonical" href="https://gzhiyi.top/docker-command" />
+<meta property="og:url" content="https://gzhiyi.top/docker-command" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-29T10:44:51+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Docker的一些需记基础命令和用法" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-29T10:44:51+08:00","datePublished":"2021-07-29T10:44:51+08:00","description":"由于docker目前在项目中用的比较少，慢慢在写项目的过程中，有一些命令会被我遗忘掉。所以我把一些基础常用的docker命令列下来，方便自己在回顾docker或者重新使用的时候快速运用上。在后续的时间里，也会尽可能的将docker应用到能用上的项目中。","headline":"Docker的一些需记基础命令和用法","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/docker-command"},"url":"https://gzhiyi.top/docker-command"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">Docker的一些需记基础命令和用法</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-07-29T10:44:51+08:00" itemprop="datePublished">2021-07-29 10:44
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>由于docker目前在项目中用的比较少，慢慢在写项目的过程中，有一些命令会被我遗忘掉。所以我把一些基础常用的docker命令列下来，方便自己在回顾docker或者重新使用的时候快速运用上。在后续的时间里，也会尽可能的将docker应用到能用上的项目中。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>我用linux比较多，所以只记录在linux下的安装步骤。</p>
+
+<ol>
+  <li>如果有旧版本的docker，需要先卸载旧版本。旧版本为docker或者docker-engine。</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get remove docker docker-engine docker.io
+</code></pre></div></div>
+
+<ol>
+  <li>用脚本安装。</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> get.docker.com <span class="nt">-o</span> get-docker.sh
+<span class="nb">sudo </span>sh get-docker.sh <span class="nt">--mirror</span> Aliyun
+</code></pre></div></div>
+
+<ol>
+  <li>启动docker</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable </span>docker
+<span class="nb">sudo </span>systemctl start docker
+</code></pre></div></div>
+
+<ol>
+  <li>建立docker用户组</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>groupadd docker
+<span class="nb">sudo </span>usermod <span class="nt">-aG</span> docker <span class="nv">$USER</span>
+</code></pre></div></div>
+
+<ol>
+  <li>测试是否安装好</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">--rm</span> hello-world
+</code></pre></div></div>
+
+<h2 id="常用命令">常用命令</h2>
+
+<p>注意-t之类的命令是用于修饰动作的，比如<code class="language-plaintext highlighter-rouge">run -t-d</code></p>
+
+<h3 id="镜像使用">镜像使用</h3>
+
+<ul>
+  <li>拉取</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ubuntu:18.04 <span class="c"># 拉取ubuntu镜像，对应版本（tag）为18.04</span>
+</code></pre></div></div>
+
+<ul>
+  <li>运行（这个镜像为基础启动并运行一个容器）</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> ubuntu:18.04 bash <span class="c"># -ℹ交互式操作，-t终端</span>
+</code></pre></div></div>
+
+<ul>
+  <li>列出</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker image <span class="nb">ls</span> <span class="c"># ls后跟具名可以过滤该名的镜像； -a列出所有镜像</span>
+</code></pre></div></div>
+
+<ul>
+  <li>删除</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker image <span class="nb">rm</span> <span class="o">[</span>IMAGE ID / 仓库名：标签] <span class="c"># id不需要全部打完，输入前3个就可以定位到</span>
+<span class="c"># 例如删除ubuntu</span>
+docker image <span class="nb">rm </span>ubuntu:18.04
+</code></pre></div></div>
+
+<h3 id="容器使用">容器使用</h3>
+
+<p>容器是独立运行的一个或一组应用，以及它们的运行态环境。</p>
+
+<ul>
+  <li>列出</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container <span class="nb">ls</span> <span class="c"># ls只列出当前运行的容器，ls -a列出所有容器，包含了已经停止运行的</span>
+</code></pre></div></div>
+
+<ul>
+  <li>启动（这个镜像为基础启动并运行一个容器）</li>
+</ul>
+
+<p>创建一个新的容器</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> ubuntu:18.04 bash <span class="c"># -ℹ交互式操作，-t终端</span>
+</code></pre></div></div>
+
+<p>启动一个已经停止的容器</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container start <span class="o">[</span>CONTAINER ID] <span class="c"># id不需要全部打完，输入前3个就可以定位到</span>
+</code></pre></div></div>
+
+<ul>
+  <li>守护态运行</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">-d</span> ubuntu:18.04 bash <span class="c"># -ℹ交互式操作，-t终端</span>
+</code></pre></div></div>
+
+<p>如果需要查看守护态容器的日志信息，可以使用：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker logs <span class="o">[</span>CONTAINER ID] <span class="c"># id不需要全部打完，输入前3个就可以定位到</span>
+</code></pre></div></div>
+
+<ul>
+  <li>停止</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container stop <span class="o">[</span>CONTAINER ID] 
+<span class="c"># 如果需要重新启动，可以restart</span>
+docker container restart <span class="o">[</span>CONTAINER ID]
+</code></pre></div></div>
+
+<ul>
+  <li>进入容器</li>
+</ul>
+
+<p>一般来说，都是需要一个可交互的终端进入容器</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> <span class="o">[</span>CONTAINER ID] bash <span class="c"># exec进入容器，使用exit并不会停止容器的运行，这和attach不一样</span>
+</code></pre></div></div>
+
+<ul>
+  <li>删除</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container <span class="nb">rm</span> <span class="o">[</span>CONTAINER ID]
+
+<span class="c"># 如果想清理所有停止运行的容器</span>
+docker container prune
+</code></pre></div></div>
+
+<h2 id="docker-hub">Docker Hub</h2>
+
+<h3 id="登陆和退出docker-hub">登陆和退出docker hub</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker login
+docker logout
+``
+
+### 镜像的搜索
+
+```bash
+docker search ubuntu # 可以看到搜索出来的镜像
+</code></pre></div></div>
+
+<h2 id="数据卷volume">数据卷Volume</h2>
+
+<p>数据卷 可以在容器之间共享和重用
+对 数据卷 的修改会立马生效
+对 数据卷 的更新，不会影响镜像
+数据卷 默认会一直存在，即使容器被删除</p>
+
+<ul>
+  <li>创建</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume create my-vol
+</code></pre></div></div>
+
+<ul>
+  <li>查看</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">ls</span> <span class="c"># 查看所有的数据卷</span>
+docker volume inspect <span class="o">[</span>VOLUME NAME] <span class="c"># 查看某个数据卷的信息</span>
+</code></pre></div></div>
+
+<ul>
+  <li>启动</li>
+</ul>
+
+<p>在使用docker run命令的时候，带上<code class="language-plaintext highlighter-rouge">--mount</code>将数据卷挂载到容器中</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-P</span> <span class="nt">--name</span> web <span class="nt">--mount</span> <span class="nb">source</span><span class="o">=</span>my-vol,target<span class="o">=</span>/usr/share/nginx/html nginx:alpine <span class="c"># --name 定义容器的名称</span>
+</code></pre></div></div>
+
+<p>以上命令。创建一个名为<code class="language-plaintext highlighter-rouge">web</code>的容器，家在一个数据卷到容器web的<code class="language-plaintext highlighter-rouge">/usr/share/nginx/html</code>目录。</p>
+
+<p>查看数据卷的具体信息</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker inspect web
+</code></pre></div></div>
+
+<p>结果：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"Mounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"volume"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-vol"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/var/lib/docker/volumes/my-vol/_data"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/share/nginx/html"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Driver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"local"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RW"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Propagation"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>删除</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">rm</span> <span class="o">[</span>VOLUME NAME] <span class="c"># 删除指定的数据卷</span>
+docker volume prune <span class="c"># 删除无主的数据卷</span>
+</code></pre></div></div>
+
+<ul>
+  <li>挂载目录</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="nt">-P</span> <span class="nt">--name</span> web <span class="nt">--mount</span> <span class="nb">type</span><span class="o">=</span><span class="nb">bind</span>,source<span class="o">=</span>/src/webapp,target<span class="o">=</span>/usr/share/nginx/html nginx:alpine
+</code></pre></div></div>
+
+<p>如果source为绝对路径，则为挂载主机的目录。</p>
+
+<h2 id="网络">网络</h2>
+
+<h3 id="外部访问容器">外部访问容器</h3>
+
+<p>通过-P或-p参数指定或者不制定端口的方式让外部访问容器内部的网络应用。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-P</span> nginx:alpine <span class="c"># 启动一个容器</span>
+docker container <span class="nb">ls</span>
+</code></pre></div></div>
+
+<p>在PORTS那一列，可以看到：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.0.0.0:32768-&gt;80/tcp
+</code></pre></div></div>
+
+<p>这里表示着本机的32768端口被映射到了容器的80端口，意味着在本机上访问32768端口就可以访问到容器的nginx默认页面。访问方式为本机ip + 端口（32768）。</p>
+
+<h3 id="容器互联">容器互联</h3>
+
+<p>通过docker网络的方式让连接到创建的网络上实现容器之间的互联。</p>
+
+<ul>
+  <li>创建网络</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker network create <span class="nt">-d</span> bridge <span class="o">[</span>NETWORK NAME]
+</code></pre></div></div>
+
+<p>运行第一个容器并连接到网络[NETWORK NAME]</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">--name</span> busybox1 <span class="nt">--network</span> <span class="o">[</span>NETWORK NAME] busybox sh
+</code></pre></div></div>
+
+<p>运行第一个容器并连接到网络[NETWORK NAME]</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">--name</span> busybox2 <span class="nt">--network</span> <span class="o">[</span>NETWORK NAME] busybox sh
+</code></pre></div></div>
+
+<p>以上两个容器连接到了同一个网络[NETWORK NAME]，某一个容器都可以ping通与之连载在同一个网络下的容器。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/ <span class="c"># ping busybox2</span>
+PING busybox2 <span class="o">(</span>172.19.0.3<span class="o">)</span>: 56 data bytes
+64 bytes from 172.19.0.3: <span class="nb">seq</span><span class="o">=</span>0 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.072 ms
+64 bytes from 172.19.0.3: <span class="nb">seq</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.118 ms
+</code></pre></div></div>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/docker-command" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

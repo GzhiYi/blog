@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>博客增加通过命令行新建和编辑文章快捷操作 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="博客增加通过命令行新建和编辑文章快捷操作" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="如果喜欢命令行写内容，不妨可以增加一些快捷操作" />
+<meta property="og:description" content="如果喜欢命令行写内容，不妨可以增加一些快捷操作" />
+<link rel="canonical" href="https://gzhiyi.top/new-blog-in-terminal" />
+<meta property="og:url" content="https://gzhiyi.top/new-blog-in-terminal" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-01T12:37:52+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="博客增加通过命令行新建和编辑文章快捷操作" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-01T12:37:52+08:00","datePublished":"2022-08-01T12:37:52+08:00","description":"如果喜欢命令行写内容，不妨可以增加一些快捷操作","headline":"博客增加通过命令行新建和编辑文章快捷操作","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/new-blog-in-terminal"},"url":"https://gzhiyi.top/new-blog-in-terminal"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">博客增加通过命令行新建和编辑文章快捷操作</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-08-01T12:37:52+08:00" itemprop="datePublished">2022-08-01 12:37
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="如果喜欢命令行写内容不妨可以增加一些快捷操作">如果喜欢命令行写内容，不妨可以增加一些快捷操作</h1>
+
+<p>任何一个编辑器都可以写文本，当然也就可以写写 markdown。如果期望是做到在命令行一条命令完成文章的新建、编辑操作，那可以写一个脚本去处理不必要的繁琐操作。比如要找到文章的目录去新建文章；要复制文章模板去修改一些基础的信息（标题、分类、创建时间等等）；实现这个功能需要使用 Node 服务。</p>
+
+<h2 id="实现代码">实现代码</h2>
+
+<p>创建一个文件<code class="language-plaintext highlighter-rouge">new.js</code>，代码内容如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">dayjs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dayjs</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">readline</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">readline</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">exec</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">child_process</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">start</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">repl</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">rl</span> <span class="o">=</span> <span class="nx">readline</span><span class="p">.</span><span class="nx">createInterface</span><span class="p">({</span>
+  <span class="na">input</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">generatePost</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">category</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">templateStr</span> <span class="o">=</span> <span class="s2">`---
+layout: post
+title: </span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">
+date: </span><span class="p">${</span><span class="nx">dayjs</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">YYYY-MM-DD HH:mm:ss</span><span class="dl">'</span><span class="p">)}</span><span class="s2"> +0800
+categories: </span><span class="p">${</span><span class="nx">category</span><span class="p">}</span><span class="s2">
+---
+
+# 
+`</span>
+  <span class="kd">const</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">dayjs</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="dl">'</span><span class="s1">YYYY-MM-DD</span><span class="dl">'</span><span class="p">)}</span><span class="s2">-</span><span class="p">${</span><span class="nx">title</span><span class="p">}</span><span class="s2">.md`</span>
+  <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="s2">`./_posts/</span><span class="p">${</span><span class="nx">fileName</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="nx">templateStr</span><span class="p">)</span>
+  <span class="k">return</span> <span class="s2">`./_posts/</span><span class="p">${</span><span class="nx">fileName</span><span class="p">}</span><span class="s2">`</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">generatePromise</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">rl</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="dl">'</span><span class="s1">🤔输入这篇文章名称：</span><span class="dl">'</span><span class="p">,</span> <span class="nx">title</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">rl</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="dl">'</span><span class="s1">🐼路由英文：</span><span class="dl">'</span><span class="p">,</span> <span class="nx">url</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">rl</span><span class="p">.</span><span class="nx">question</span><span class="p">(</span><span class="dl">'</span><span class="s1">😪文章类别：</span><span class="dl">'</span><span class="p">,</span> <span class="nx">category</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="nx">generatePost</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="nx">category</span><span class="p">)</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">文章已生成，现在编辑！</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fileName</span><span class="p">)</span>
+          <span class="nx">resolve</span><span class="p">(</span><span class="nx">fileName</span><span class="p">)</span>
+          <span class="nx">rl</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">begin</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">generatePromise</span><span class="p">()</span>
+  <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">child_process</span><span class="dl">'</span><span class="p">).</span><span class="nx">spawn</span><span class="p">(</span><span class="dl">'</span><span class="s1">vim</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="nx">fileName</span><span class="p">],</span> <span class="p">{</span> <span class="na">stdio</span><span class="p">:</span> <span class="dl">'</span><span class="s1">inherit</span><span class="dl">'</span> <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">begin</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>其中 <code class="language-plaintext highlighter-rouge">generatePost</code> 函数的 <code class="language-plaintext highlighter-rouge">templateStr</code> 为文章的模板信息，交给 <code class="language-plaintext highlighter-rouge">Jekyll</code> 去渲染一些基础信息。通过 <code class="language-plaintext highlighter-rouge">Node</code> 的 <code class="language-plaintext highlighter-rouge">readline api</code>，处理手动输入的文章标题、路由、类别等等。最后定义为一个 <code class="language-plaintext highlighter-rouge">Promise</code> ，以便在生成文件后打开 <code class="language-plaintext highlighter-rouge">vim</code> 进行编写操作。</p>
+
+<h2 id="脚本命令添加">脚本命令添加</h2>
+
+<p>完成脚本后，就可以通过一个简单的命令 <code class="language-plaintext highlighter-rouge">node new.js</code> 去执行这一系列的操作了。在 <code class="language-plaintext highlighter-rouge">package.json</code> 中补充命令即可：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"new"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node new.js"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>如果你想在整个操作系统中随处写文章，可以设置 <code class="language-plaintext highlighter-rouge">alias</code> 快捷访问。例如在 <code class="language-plaintext highlighter-rouge">.zshrc</code> 中补充：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /Users/gzhiyi/Documents/projects/blog 为你的 Jekyll 项目目录，按需填写</span>
+<span class="nb">alias </span><span class="nv">post</span><span class="o">=</span><span class="s2">"cd /Users/gzhiyi/Documents/projects/blog &amp;&amp; yarn new"</span>
+</code></pre></div></div>
+
+<p>别忘记最后重启命令行或者执行 <code class="language-plaintext highlighter-rouge">source ~/.zshrc</code> 让配置生效。最后如果想写文章，只需要在任何用到 <code class="language-plaintext highlighter-rouge">～/.zshrc</code> 的 <code class="language-plaintext highlighter-rouge">terminal</code> 中输入 <code class="language-plaintext highlighter-rouge">post</code> 即可。</p>
+
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/new-blog-in-terminal" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

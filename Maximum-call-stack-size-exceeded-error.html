@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>记一次Maximum call stack size exceeded error | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="记一次Maximum call stack size exceeded error" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="一次在ci打包编译vue项目，上线到测试环境后出现了Maximum call stack size exceeded error错误。" />
+<meta property="og:description" content="一次在ci打包编译vue项目，上线到测试环境后出现了Maximum call stack size exceeded error错误。" />
+<link rel="canonical" href="https://gzhiyi.top/Maximum-call-stack-size-exceeded-error" />
+<meta property="og:url" content="https://gzhiyi.top/Maximum-call-stack-size-exceeded-error" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-31T14:34:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="记一次Maximum call stack size exceeded error" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-07-31T14:34:00+08:00","datePublished":"2021-07-31T14:34:00+08:00","description":"一次在ci打包编译vue项目，上线到测试环境后出现了Maximum call stack size exceeded error错误。","headline":"记一次Maximum call stack size exceeded error","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/Maximum-call-stack-size-exceeded-error"},"url":"https://gzhiyi.top/Maximum-call-stack-size-exceeded-error"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">记一次Maximum call stack size exceeded error</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-07-31T14:34:00+08:00" itemprop="datePublished">2021-07-31 14:34
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>一次在ci打包编译vue项目，上线到测试环境后出现了Maximum call stack size exceeded error错误。</p>
+
+<p>这个错误意思是堆栈溢出。本地环境无任何这样的问题，但经过ci跑完之后就出现这个问题。
+错误提示指向了打包后的js文件，由于代码压缩uglifyjs，所以直接是看不到错误根源的。在搜索了相关的资料后，有提到是vue单页面组件中存在重复定义的变量。但我有引用lint工具，如果出现这样但情况git提交是无法顺利进行的。</p>
+
+<h2 id="切换部署代码">切换部署代码</h2>
+
+<p>把部署到测试环境的代码回退到上一个tag，意在排除是代码的问题。结果回退到上一个tag后，经过ci部署，线上仍旧出现这个情况。</p>
+
+<p>经过一步步推测，觉得就是在打包编译的过程中出现了问题。</p>
+
+<h2 id="问题原因">问题原因</h2>
+
+<p>在ci到log日志中，发现代码在build的过程中，prettier出现了不少的错误。所以根源就在于本地和docker镜像中的项目build所需要的某个package出现异常。
+而异常就应该出现在prettier上。</p>
+
+<h2 id="问题处理">问题处理</h2>
+
+<p>要是出自某个package上，只能是package的版本不一致导致的。在package.json中，看到版本：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"prettier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^2.0.2"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>这个版本符号”^”是插入符号，这会安装当前的主要版本，例如上面的版本的话，会更新到2.x.x最新的版本。这就会可能引起版本的不一致。</p>
+
+<p>把这个符号移除掉，固定版本号之后，ci也不会出现问题，上线就恢复正常了。</p>
+
+<h2 id="packagejson版本总结">package.json版本总结</h2>
+
+<p>package.json中的版本号有3个位。例如：<code class="language-plaintext highlighter-rouge">1.12.2</code></p>
+
+<p>从左到右，第一个数字为主版本号（marjor version），第二个数字为次版本号（minor version），第三个数字为补丁版本号（patch version）。</p>
+
+<p><code class="language-plaintext highlighter-rouge">~</code>: 更新中间数字的最新版本。如<code class="language-plaintext highlighter-rouge">~1.3.1</code>会更新1.3.x最新版本。
+<code class="language-plaintext highlighter-rouge">^</code>: 更新第一个数字但最新版本。如<code class="language-plaintext highlighter-rouge">^1.3.1</code>会更新1.x.x最新版本。</p>
+
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/Maximum-call-stack-size-exceeded-error" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

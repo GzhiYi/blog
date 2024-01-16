@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>HTTP缓存 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="HTTP缓存" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="缓存相关头" />
+<meta property="og:description" content="缓存相关头" />
+<link rel="canonical" href="https://gzhiyi.top/http-cache" />
+<meta property="og:url" content="https://gzhiyi.top/http-cache" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-28T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="HTTP缓存" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-11-28T20:00:00+08:00","datePublished":"2019-11-28T20:00:00+08:00","description":"缓存相关头","headline":"HTTP缓存","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/http-cache"},"url":"https://gzhiyi.top/http-cache"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">HTTP缓存</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-11-28T20:00:00+08:00" itemprop="datePublished">2019-11-28 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="缓存相关头">缓存相关头</h2>
+
+<h3 id="响应头">响应头</h3>
+
+<ul>
+  <li>Expire。资源过期时间。</li>
+  <li>Cache-Control。缓存控制字段，精确控制缓存策略。</li>
+  <li>Last-Modified。资源最近修改时间。</li>
+  <li>Etag。资源标识。</li>
+</ul>
+
+<h3 id="请求头">请求头</h3>
+
+<ul>
+  <li>Cache-Control。缓存控制字段，精确控制缓存策略。</li>
+  <li>If-Modified-Since。资源最新修改时间。</li>
+  <li>If-None-Match。缓存资源标识。</li>
+</ul>
+
+<h3 id="字段匹配">字段匹配</h3>
+
+<p>If-Modified-Since和Last-Modified
+Etag和If-None-Match</p>
+
+<h2 id="浏览器和服务器约定资源过期时间">浏览器和服务器约定资源过期时间</h2>
+
+<p>服务器和浏览器之间约定文件的过期时间，控制的字段为：Expires。在这个时间未到之前，浏览器对同一个文件不会向服务器发起请求。</p>
+
+<p><strong>缺点：</strong>Expire到期后，如果文件未进行过改动，浏览器还是会向服务器请求读取文件。</p>
+
+<h2 id="服务器告诉浏览器资源上次的修改时间解决上面的问题">服务器告诉浏览器资源上次的修改时间（解决上面的问题）</h2>
+
+<p>服务器返回文件的时候，在响应头上增加一个最近修改时间（Last-Modified）。浏览器在Expires时间到之后，会向服务器发起文件请求，这时带上一个最近修改时间（If-Modified-Since = Last-Modified）。服务器在接受到请求之后，会拿这个时间和服务器上目标文件的上一次修改时间做对比：</p>
+<ul>
+  <li>相等。进行304跳转，不要读取服务器文件了，读取缓存就行了。</li>
+  <li>不相等。读取服务器上的文件。
+<strong>缺点：</strong>
+    <ol>
+      <li>Expires过期时间浏览器断可以修改，这样会导致缓存不准确。</li>
+      <li>Last-Modified过期时间只能精确到秒。（一秒内可能多次改动，这样会造成两个可能的问题：文件一秒内改动多次，但还是通知浏览器读缓存。如果文件修改了，但内容不变，那就会去读服务器文件了。）</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="增加相对时间控制引入cache-control">增加相对时间控制，引入Cache-Control</h2>
+
+<p>服务器在返回资源给浏览器的时候，会增加一个相对时间：Cache-Control：max-age=1000s。这个的意思是告诉浏览器，1000s内使用浏览器缓存的文件。</p>
+
+<p><strong>优先级：</strong> 
+Cache-Control优先于Expires。有Cache-Control就以Cache-Control为准。</p>
+
+<h2 id="继续升级缓存机制">继续升级缓存机制</h2>
+
+<p>带上Etag-可以理解为文件的唯一Id，由服务器返回到浏览器上。
+在有效期过后，带上一个等同于Etag值的If-None-Match请求头，比较后处理是否读取文件。</p>
+
+<h2 id="最后是我前端的一个技巧啦">最后是我前端的一个技巧啦</h2>
+
+<p>由于上面那么多的缓存判断条件，都不能满足一个情况，既浏览器永远无法主动知道服务器的文件已经更新。那好：静态资源在请求链接上更新就行了。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://test.com/a.【hash值】.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/http-cache" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

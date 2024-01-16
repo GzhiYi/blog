@@ -1,0 +1,56 @@
+Arguments: 
+  /Users/gzhiyi/.nvm/versions/node/v15.0.0/bin/node /opt/homebrew/Cellar/yarn/1.22.17_2/libexec/bin/yarn.js run
+
+PATH: 
+  /usr/local/opt/gnu-sed/libexec/gnubin:/Users/gzhiyi/.gem/ruby/3.1.2/bin:/Users/gzhiyi/.rubies/ruby-3.1.2/lib/ruby/gems/3.1.0/bin:/Users/gzhiyi/.rubies/ruby-3.1.2/bin:/Users/gzhiyi/Documents/flutter/flutter/bin:/Users/gzhiyi/Library/pnpm:/Users/gzhiyi/.nvm/versions/node/v15.0.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/opt/gnu-sed/libexec/gnubin:/Users/gzhiyi/Documents/flutter/flutter/bin:/Users/gzhiyi/Library/pnpm:/Users/gzhiyi/.nvm/versions/node/v15.0.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  15.0.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Invariant Violation: Action must exists
+      at invariant (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:2314:15)
+      at Object.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:62602:9)
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:310:30)
+      at /opt/homebrew/Cellar/yarn/1.22.17_2/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "blog",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "new": "node new.js",
+      "deploy": "git add . && git commit -m 'update' && git push",
+      "run": "bundle exec jekyll serve",
+      "write": ""
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/GzhiYi/blog.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/GzhiYi/blog/issues"
+    },
+    "homepage": "https://github.com/GzhiYi/blog#readme",
+    "dependencies": {
+      "dayjs": "^1.11.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

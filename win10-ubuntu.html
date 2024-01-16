@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>前端搭建win10-ubuntu双系统的小记 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="前端搭建win10-ubuntu双系统的小记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="首先版本是Ubuntu 16.04(LTS)非麒麟版本。" />
+<meta property="og:description" content="首先版本是Ubuntu 16.04(LTS)非麒麟版本。" />
+<link rel="canonical" href="https://gzhiyi.top/win10-ubuntu" />
+<meta property="og:url" content="https://gzhiyi.top/win10-ubuntu" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-11-09T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="前端搭建win10-ubuntu双系统的小记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-11-09T20:00:00+08:00","datePublished":"2017-11-09T20:00:00+08:00","description":"首先版本是Ubuntu 16.04(LTS)非麒麟版本。","headline":"前端搭建win10-ubuntu双系统的小记","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/win10-ubuntu"},"url":"https://gzhiyi.top/win10-ubuntu"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">前端搭建win10-ubuntu双系统的小记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-11-09T20:00:00+08:00" itemprop="datePublished">2017-11-09 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="首先版本是ubuntu-1604lts非麒麟版本">首先版本是Ubuntu 16.04(LTS)非麒麟版本。</h2>
+
+<p>由于时间不多，主要拿Ubuntu进行web开发。其他发行版并未尝试。也好记录一下配置Ubuntu以及gnome的走过的坑。</p>
+
+<h3 id="安装ubuntu">安装Ubuntu</h3>
+
+<p>可到官网安装，版本看个人喜欢，麒麟版本自带中文以及拼音输入法等。</p>
+
+<p><a href="http://cn.ubuntu.com/download/">Download</a></p>
+
+<p>下载好之后用软碟通写入U盘映像。无论双系统与否都必须关闭secure Boot。
+解释算好也基本上上每个懂折腾Linux的都会看过这一篇文章
+<a href="http://www.ruanyifeng.com/blog/2013/01/secure_boot.html">反Secure Boot垄断：兼谈如何在Windows 8电脑上安装Linux</a></p>
+
+<p>自行划分硬盘空间。
+硬盘划好，电脑开机选快捷启动就进入安装，分区的时候主要有几个分区点（以下只是在双系统下分配硬盘空间较小的建议，实际看个人需要）:</p>
+
+<p>/：存储系统文件，建议15G;</p>
+
+<p>swap：交换分区，即Linux系统的虚拟内存，建议是物理内存的1～2倍；</p>
+
+<p>/home：home目录，存放音乐、图片及下载等文件的空间，建议最后分配所有剩下的空间；</p>
+
+<p>/boot：包含系统内核和系统启动所需的文件，实现双系统的关键所在，建议200M。</p>
+
+<p>均可选择为逻辑分区。
+一路下来就可以开机了。
+由于没有记录图片所以不再多说。</p>
+
+<h3 id="安装gnome">安装gnome</h3>
+
+<p>安装完Ubuntu如果足够开发就不需要Gnome，自带的是Untiy，Gnome只是美化和方便。因为有大量的扩展可以使用。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Ctrl+Alt+T 打开终端
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. $ sudo apt-get install gnome-shell  //安装gnome-shell
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3. $ sudo apt-get install ubuntu-gnome-desktop  //安装gnome-desktop
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. $ sudo apt-get install unity-tweak-tool  //安装 unity-tweak-tool
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5. $ sudo apt-get install gnome-tweak-tool   //安装gnome-tweak-tool
+</code></pre></div></div>
+
+<h3 id="重启请选择-gnome经典桌面">重启请选择 Gnome经典桌面</h3>
+
+<p>输密码那有个齿轮的，不选择的话会有坑。一开始自己默认进入的是Ubuntu桌面，只能应用主题图标，扩展都没办法应用。
+gnome拓展到<a href="https://extensions.gnome.org/">gnome拓展中心</a>下载安装。
+如果没有安装浏览器插件，火狐和chrome的应用或者说插件中心搜索gnome shell extensoins 安装就可以。</p>
+
+<h3 id="扩展推荐和注意">扩展推荐和注意</h3>
+
+<p>推荐(必装)： <a href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock</a>、<a href="https://extensions.gnome.org/extension/545/hide-top-bar/">Hide Top Bar自动隐藏顶栏</a></p>
+
+<p>底栏去除：</p>
+
+<p>到目录</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/share/gnome-shell/extensions
+</code></pre></div></div>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/win10-ubuntu" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

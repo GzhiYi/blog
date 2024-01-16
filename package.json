@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new": "node new.js",
+    "deploy": "git add . && git commit -m 'update' && git push",
+    "start": "bundle exec jekyll serve",
+    "write": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GzhiYi/blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GzhiYi/blog/issues"
+  },
+  "homepage": "https://github.com/GzhiYi/blog#readme",
+  "dependencies": {
+    "dayjs": "^1.11.4"
+  }
+}

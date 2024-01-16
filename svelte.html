@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>svelte语法点小记 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="svelte语法点小记" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="计划重写原本由sapper编写的博客，需要移除sapper，只用svelte和一般的构建即可。在此之前，需要花点时间学习（回顾）一下svelte的一下语法点，会和vue进行对比，暂不深入理解内部原理，单纯建立在官方文档的基础上。" />
+<meta property="og:description" content="计划重写原本由sapper编写的博客，需要移除sapper，只用svelte和一般的构建即可。在此之前，需要花点时间学习（回顾）一下svelte的一下语法点，会和vue进行对比，暂不深入理解内部原理，单纯建立在官方文档的基础上。" />
+<link rel="canonical" href="https://gzhiyi.top/svelte" />
+<meta property="og:url" content="https://gzhiyi.top/svelte" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-24T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="svelte语法点小记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-06-24T20:00:00+08:00","datePublished":"2021-06-24T20:00:00+08:00","description":"计划重写原本由sapper编写的博客，需要移除sapper，只用svelte和一般的构建即可。在此之前，需要花点时间学习（回顾）一下svelte的一下语法点，会和vue进行对比，暂不深入理解内部原理，单纯建立在官方文档的基础上。","headline":"svelte语法点小记","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/svelte"},"url":"https://gzhiyi.top/svelte"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">svelte语法点小记</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-06-24T20:00:00+08:00" itemprop="datePublished">2021-06-24 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>计划重写原本由sapper编写的博客，需要移除sapper，只用svelte和一般的构建即可。在此之前，需要花点时间学习（回顾）一下svelte的一下语法点，会和vue进行对比，暂不深入理解内部原理，单纯建立在官方文档的基础上。</p>
+
+<p>记录并不是所有细节都要兼顾。遇到和vue理念比较大，或者说这个语法并没有让我那么容易记住的知识点，我都会记录下来，并在后续闲暇的时间下进行回顾复习，有点类似于做一下错题本。</p>
+
+<ol>
+  <li>
+    <p>变量和代码块都只需要放在一个花括号里面就好了。在vue里面是{{}}包裹，有点不同。不要有带入vue语法的惯性思维。</p>
+  </li>
+  <li>
+    <p>和vue类似，一个<code class="language-plaintext highlighter-rouge">.svelte</code>文件就是一个组件，包含了script、html、还有css。可以在另一个svelte组件中引入svelte组件。</p>
+  </li>
+  <li>
+    <p>{@html 字符串}，包裹的字符串会被转化为不信任来源的html代码，注意防止xss攻击。</p>
+  </li>
+  <li>
+    <p>当组件中的变量更新的时候，svelte会自动更新对应的dom。类似于vue中的计算属性，svelte是这么处理的：</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">varable</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">$</span><span class="p">:</span> <span class="nx">varableName</span> <span class="o">=</span> <span class="nx">varable</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>    </div>
+
+    <p>其中<code class="language-plaintext highlighter-rouge">$:</code>就是可以标识变量为“计算属性”，其中varable变化的话，对应的varableName也会跟着变化。</p>
+
+    <p><code class="language-plaintext highlighter-rouge">$:</code>不仅仅是标识变量为计算属性，还可以是一串代码块，在该代码块中的变量一旦发生变化，就会执行这个代码块，而如果没有变量变化，这一个代码块就不会执行。所以把这个符号理解为响应式定义符更好，官网提到的名词就叫响应式声明。</p>
+  </li>
+  <li>
+    <p>对于一般变量，直接赋值就可以产生响应式的效果，但如果是对象类型就不可以，比如数组的push等操作，就不会更新dom。svelte的解决方式有</p>
+
+    <ol>
+      <li>
+        <p>在数组操作之后，将结果数组赋值给原数组。</p>
+
+        <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="kd">function</span> <span class="nx">addNum</span><span class="p">(</span><span class="nx">newNum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">num</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newNum</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">// 直接在html上调用这个addNum函数，是不会对num进行更新的，需要改为</span>
+<span class="kd">function</span> <span class="nx">addNum</span><span class="p">(</span><span class="nx">newNum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">num</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">newNum</span><span class="p">)</span>
+  <span class="nx">num</span> <span class="o">=</span> <span class="nx">num</span>
+<span class="p">}</span>
+<span class="c1">// 抑或者</span>
+<span class="kd">function</span> <span class="nx">addNum</span><span class="p">(</span><span class="nx">newNum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">num</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">num</span><span class="p">,</span> <span class="nx">newNum</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>对于对象属性的更新，可以直接赋值。</p>
+
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="c1">// 可以直接更新obj上的name属性</span>
+<span class="kd">function</span> <span class="nx">changeName</span><span class="p">(</span><span class="nx">newName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">newName</span>
+<span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<p>6.组件参数传递。和vue不一样，vue在一个组件中对传入参数是直接在props上进行声明的。而svelte是直接在组件内export参数。</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 组件displayName.svelte
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+  <span class="k">export</span> <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">name参数的默认值</span><span class="dl">"</span> <span class="c1">// 这里就直接表示组件a具有一个name的参数，外部可以传递进来</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+// 组件b.svelte
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="nx">DisplayName</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./displayName.svelte</span><span class="dl">'</span>
+	<span class="kd">let</span> <span class="nx">myName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;DisplayName</span> <span class="na">name=</span><span class="s">{myName}</span><span class="nt">&gt;&lt;/DisplayName&gt;</span>
+
+
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>if块。初次感受肯定是没有vue方便快捷，但写多几遍之后，发现还是可以接受这样的一个语法糖。注意#号不能遗漏掉。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{#if isTrue}
+	// 执行为isTrue的html
+{:else if 条件} // 这个是额外可能出现的条件
+{:else}
+	// 执行isTrue为false的html
+{/if}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>循环块。类比vue中的v-for。其中（）内的数值表示为id，可以有效更新dom。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let arr = [
+	{
+		id: 1,
+		name: 'cat'
+	},
+	{
+		id: 2,
+		name: 'dog'
+	}
+]
+{#each arr as item, index(item.id)}
+	<span class="nt">&lt;p&gt;</span>{index}: {item.name}<span class="nt">&lt;/p&gt;</span>
+{/each}
+// 用上解构，会更加简洁明了
+{#each arr as {id, name}, index(id)}
+	<span class="nt">&lt;p&gt;</span>{index}: {id} {name}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>await块。没想到真的有这个东西，可以直接拿来判断一个promise在多个状态下的表现，这可以说不用写那一堆loading了，大致的代码如下：</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+	<span class="kd">let</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">getDataFromUrl</span><span class="p">()</span>
+  <span class="k">async</span> <span class="nx">getDataFromUrl</span><span class="p">()</span> <span class="p">{}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+// 直接拿promise就像是一个promise一样在html中await
+{#await promise}
+	<span class="nt">&lt;p&gt;</span>正在请求中...<span class="nt">&lt;/p&gt;</span>
+{:then res}
+	<span class="nt">&lt;p&gt;</span>返回的内容{res}<span class="nt">&lt;/p&gt;</span>
+{:catch error}
+	<span class="nt">&lt;p&gt;</span>请求出现异常<span class="nt">&lt;/p&gt;</span>
+{/await}
+   
+// 抑或者，你不需要展示loading以及catch错误的话，可以直接then出来
+{#await promise then res}
+	<span class="nt">&lt;p&gt;</span>返回的内容{res}<span class="nt">&lt;/p&gt;</span>
+{/await}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>事件处理。通过on定义符进行事件绑定。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">{事件名}</span><span class="nt">&gt;</span>点击<span class="nt">&lt;/button&gt;</span>
+// on后面接上原生的事件就好了，比如click、mousemove等
+// 事件名可以替换为代码块，如
+<span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">{e</span> <span class="err">=</span><span class="nt">&gt;</span> {// 对变量进行操作}&gt;点击<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>    </div>
+
+    <p>有些框架由于性能的原因建议不要用行内的方式写事件，尤其是在循环里面。但svelte并没有这个问题，你可以直接用而不用担心那些琐碎，svelte总会做到最好。</p>
+
+    <p>事件修饰符，可以对事件进行几个有用的修饰。以previewDefault举例：</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">on:click</span><span class="err">|</span><span class="na">preventDefault=</span><span class="s">{事件名}</span><span class="nt">&gt;</span>点击<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>    </div>
+
+    <ol>
+      <li>preventDefault 阻止默认事件。</li>
+      <li>stopPropagation 阻止事件冒泡。</li>
+      <li>passive 优化对touch、wheel事件的滚动表现。</li>
+      <li>capture 在 <em>capture</em> 阶段而不是<em>bubbling</em> 阶段触发事件处理程序。</li>
+      <li>once 事件只运行一次就删除绑定。</li>
+      <li>self 仅当 event.target 是其本身时才执行。</li>
+    </ol>
+
+    <p>以上修饰符可以串联使用。</p>
+  </li>
+  <li>
+    <p>组件通信。老生常谈，业务中遇到的太多了。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 父组件 parent.svelte
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="nx">child</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./child.svelte</span><span class="dl">'</span>
+  <span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hi, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;child</span> <span class="na">on:say=</span><span class="s">{sayHello}</span><span class="nt">&gt;&lt;/child&gt;</span>
+    
+// 子组件 child.svelte
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+  <span class="c1">// 子组件要调用父组件的事件，需要用到事件派发器</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">createEventDispatcher</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte</span><span class="dl">'</span>
+  <span class="kd">const</span> <span class="nx">dispatch</span> <span class="o">=</span> <span class="nx">createEventDispatcher</span><span class="p">()</span>
+	<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 这里的话有些类似vue中的$emit</span>
+    <span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">say</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">我</span><span class="dl">'</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">{sayHello}</span><span class="nt">&gt;</span>点击<span class="nt">&lt;/button&gt;</span>
+// 如果是dom事件，那么子组件只要不具名，就可以直接调用父组件的事件
+// 父组件事件定义
+<span class="nt">&lt;button</span> <span class="na">on:click=</span><span class="s">{eventName}</span><span class="nt">&gt;</span>点击<span class="nt">&lt;/button&gt;</span>
+// 如果子组件想直接调用dom事件eventName，则
+// 子组件
+<span class="nt">&lt;button</span> <span class="na">on:click</span><span class="nt">&gt;</span>点击<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>    </div>
+
+    <p>如果组件嵌套，需要多次转发事件的话，可以把中间的组件都加一个on:eventName，那么事件名为eventName的事件就会一直转发到目标组件上。</p>
+
+    <p><em>2021-06-01 23:20</em></p>
+  </li>
+</ol>
+
+<p>12.双向绑定。和vue原理对比TODO。在svelte中的双向绑定，只需要通过bind修饰就可以。</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+	<span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">cat</span><span class="dl">'</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">bind:value=</span><span class="s">{name}</span><span class="nt">&gt;&lt;/input&gt;</span>
+</code></pre></div></div>
+
+<p>表单元素都可以通过bind进行双向绑定，比如checkbox等。</p>
+
+<p>对数组对象，可以直接对值进行循环绑定，这个和vue类似。</p>
+
+<p>每个块级标签都可以对<code class="language-plaintext highlighter-rouge">clientWidth</code>、<code class="language-plaintext highlighter-rouge">clientHeight</code>、<code class="language-plaintext highlighter-rouge">offsetWidth</code>、<code class="language-plaintext highlighter-rouge">offsetHeight</code>进行绑定。但绑定值只是可读，直接赋值不会进行更新。可以用在读取块元素的尺寸后用于展示等业务上。</p>
+
+<ol>
+  <li>
+    <p>组件绑定。这个有点意思，我觉得像是vue中的.sync修饰。可以做到在父组件中直接读取子组件export的值。</p>
+  </li>
+  <li>
+    <p>生命周期。类比vue的生命周期，svelte的生命周期钩子还是很容易理解的。</p>
+  </li>
+</ol>
+
+<p>在svelte中，每一个组件都有其完整的生命周期，周期的函数需要从svelte中引入。</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">onMount</code>。使用最多的应该是<code class="language-plaintext highlighter-rouge">onMount</code>钩子，它在组件渲染到dom后执行。可以在这个周期内进行数据的请求操作，这是svelte所推荐的，如果把请求操作放到script内则不好，因为如果需要服务端渲染的话，生命周期函数是没法在服务端渲染过程中执行的。</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">onDestroy</code>。组件销毁的时候调用，可以对计时器进行清除等操作。文档中有一个有意思的封装，可以把计数器的操作和组件销毁时销毁计时器一起封装。</p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 比如封装到util.js中</span>
+<span class="nx">imoprt</span> <span class="p">{</span> <span class="nx">onDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte</span><span class="dl">'</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">onInterval</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">time</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">time</span><span class="p">)</span>
+  <span class="nx">onDestroy</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">interval</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>那么在组件中就可以直接引入onInterval并调用，那就不需要关切组件销毁的时候有没有把计时器进行销毁。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">onInterval</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./util.js</span><span class="dl">'</span>
+  <span class="nx">onInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{},</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">beforeUpdate</code>、<code class="language-plaintext highlighter-rouge">afterUpdate</code>。该钩子在DOM渲染完成前执行。场景例如：渲染标签的滚动位置。</li>
+  <li><code class="language-plaintext highlighter-rouge">tick</code>。可以随时调用，是一个带有resolve方法的promise，解释是每当组件pendding状态变化就会立即提现到DOM中，类似于vue的<code class="language-plaintext highlighter-rouge">$nextTick()</code>?</li>
+</ul>
+
+<ol>
+  <li>
+    <p>store。svelte自带了壮态管理，由引入自svelte/store的writable定义：</p>
+
+    <p><strong>可写store</strong></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">imoprt</span> <span class="p">{</span> <span class="nx">writable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte/store</span><span class="dl">'</span>
+    
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">writable</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">// 默认值为0，这里注意可以使用const进行定义，即便count是一个数值</span>
+</code></pre></div>    </div>
+
+    <p>在组件中，count具备update、set方法，分别表示更新和重置值。</p>
+
+    <p>在store创建后，开启的事件订阅，需要在不使用的时候销毁。我们可以在组件的onDestroy周期中取消订阅，避免内存溢出。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+	<span class="k">import</span> <span class="p">{</span> <span class="nx">onDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte</span><span class="dl">'</span>
+  <span class="k">import</span> <span class="p">{</span> <span class="nx">count</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./store.js</span><span class="dl">'</span>
+      
+  <span class="kd">let</span> <span class="nx">countValue</span>
+  <span class="kd">const</span> <span class="nx">unsubscribe</span> <span class="o">=</span> <span class="nx">count</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="c1">// 手动订阅</span>
+    <span class="nx">count_value</span> <span class="o">=</span> <span class="nx">value</span>
+  <span class="p">})</span>
+  <span class="nx">onDestroy</span><span class="p">(</span><span class="nx">unsubscribe</span><span class="p">)</span> <span class="c1">// 在组件销毁的时候取消订阅</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+
+    <p>那如果每一个状态都需要这么订阅和销毁的话，就太冗余了，svelte提供一个$符。可以对状态自动进行订阅和取消订阅。yyds。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;scirpt&gt;</span>
+	imoprt { count } from './store.js'
+<span class="nt">&lt;/scirpt&gt;</span>
+<span class="nt">&lt;p&gt;</span> {$count} <span class="nt">&lt;/p&gt;</span>
+</code></pre></div>    </div>
+
+    <p><strong>只读store</strong></p>
+
+    <p>只需在定义的时候，由writable改为readable就可以定义一个只读的store。</p>
+
+    <p><strong>防止暴露set、update方法的自定义store</strong></p>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">writable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">svelte/store</span><span class="dl">'</span>
+<span class="kd">function</span> <span class="nx">createCount</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">subscribe</span><span class="p">,</span> <span class="kd">set</span><span class="p">,</span> <span class="nx">update</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">writable</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">subscribe</span><span class="p">,</span>
+    <span class="na">increment</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">update</span><span class="p">(</span><span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="na">decrement</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">update</span><span class="p">(</span><span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="na">reset</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="kd">set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>class指令。在svelte中动态设置class或者说其余的dom属性，会和vue有一些不一样。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"{isTrue ? 'true-class' : 'false-class'}"</span><span class="nt">&gt;</span>
+  name
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class:selected=</span><span class="s">"{isTrue}"</span><span class="nt">&gt;</span> // 之后留意如何设置camel-case的class名
+  name
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>组件插槽，和vue的思想一样，这里看文档注意多个插槽怎么具名。</p>
+
+    <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 例如slot.svelte
+<span class="nt">&lt;slot</span> <span class="na">name=</span><span class="s">"slot-a"</span><span class="nt">&gt;&lt;/slot&gt;</span>
+    
+// 调用的组件
+<span class="nt">&lt;Slot&gt;</span>
+	<span class="nt">&lt;div</span> <span class="na">slot=</span><span class="s">"slot-a"</span><span class="nt">&gt;</span>
+    这里是一个具名插槽
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/Slot&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>18.context API。通过context api，可以跨越组件进行通信。具备setContext和getContext两个api。如果在一个组件中调用了setContext(key, context)，那么，在所有该子组件中都可以调用该context。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 父组件中</span>
+<span class="nx">setContext</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">context</span><span class="p">)</span>
+<span class="c1">// 任意的子组件中</span>
+<span class="kd">const</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">getContext</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ol>
+  <li>特殊标签。svelte具备一些特殊的标签。
+    <ul>
+      <li>
+        <p>svelte:self。允许组件递归的去包含自己本身。</p>
+      </li>
+      <li>
+        <p>svelte:component。动态组件，与vue类似的用法，通过传入this的组件名，动态挂在组件。</p>
+
+        <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svelte:component</span> <span class="na">this=</span><span class="s">{compnentName}</span><span class="nt">&gt;&lt;/svelte:component&gt;</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>svelte:window。把它当作是一个window对象，可以在该标签上进行事件的监听等操作。</p>
+      </li>
+      <li>
+        <p>svelte:body。和window的标签一样，可以在document.body上添加事件监听。</p>
+      </li>
+      <li>
+        <p>svelte:head。允许你在页面的&lt;head&gt;标签内插入内容。</p>
+
+        <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;svelte:head&gt;</span>
+  <span class="nt">&lt;link&gt;&lt;/link&gt;</span>
+<span class="nt">&lt;/svelte:head&gt;</span>
+</code></pre></div>        </div>
+
+        <p>需要注意的是，在服务端渲染下，这个标签的内容将会单独返回到html中。</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/svelte" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

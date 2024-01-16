@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://gzhiyi.top/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gzhiyi.top/" rel="alternate" type="text/html" /><updated>2024-01-16T11:44:58+08:00</updated><id>https://gzhiyi.top/feed.xml</id><title type="html">GzhiYi 的个人博客</title><subtitle>我是一名 Web 前端工程师。热爱生活，热爱宇宙。</subtitle><entry><title type="html">聊天系统</title><link href="https://gzhiyi.top/chat-system" rel="alternate" type="text/html" title="聊天系统" /><published>2024-01-16T11:40:24+08:00</published><updated>2024-01-16T11:40:24+08:00</updated><id>https://gzhiyi.top/chat-system</id><content type="html" xml:base="https://gzhiyi.top/chat-system"><![CDATA[<p>命名为聊天系统其实有些随意。</p>
+
+<p>在ChatGPT出来之后，AI的浪潮可以说拍打了几乎所有的互联网行业，有的没得都去蹭一下AI续一下行业热度。我个人对AI是比较看好，我就拿一个AI在操作系统上的优化说说，个人观点，可以一起讨论。</p>
+
+<p>操作系统还是不够“快速”，这里的“快速”并不是指运行速度，而是从人类指令下达到指令结束这段过程所耗费的时间。简而言之，我们应该需要更加快速的实现目的的操作系统。</p>
+
+<p>刚好ChatGPT的跃进让这个可能正快速到来。我认为最大的跃进就是AI能够理解人话（先不说理解程度，从0-1就是非常强大的跃进了），而机器懂得人类语言后，能做的事情就多了。</p>
+
+<p>比如说：</p>
+
+<p>你只要让机器明白你的意图，让机器去做你平时需要很多操作才能做的事情。例如：</p>
+<ol>
+  <li>点一份昨天晚上点的外卖，就可以直接说/写给AI，让他通过API去调用实现打开外卖APP-找到历史订单-找到昨天晚上点的外卖-下单。</li>
+  <li>把文件里面的“xxx文件”发给朋友“xxx”。下达这个指令后，也是通过API去调用，而无需进行查找文件等等一系列操作。</li>
+</ol>
+
+<p>这一切，其实图形界面实际上并没有那么重要了。</p>
+
+<p>所以，其实未来的用户操作系统，是不是只要一个输入框甚至一个语音输入就好了？用户只关心输入，系统只关心优化，往用户体验最深处优化，减少用户的多次判断。</p>]]></content><author><name></name></author><category term="随笔" /><summary type="html"><![CDATA[命名为聊天系统其实有些随意。]]></summary></entry><entry><title type="html">近期</title><link href="https://gzhiyi.top/recently" rel="alternate" type="text/html" title="近期" /><published>2023-10-19T09:16:12+08:00</published><updated>2023-10-19T09:16:12+08:00</updated><id>https://gzhiyi.top/recently</id><content type="html" xml:base="https://gzhiyi.top/recently"><![CDATA[<p>#更新下一近期</p>
+
+<p>又许久未更新 blog 了，技术栈较为稳定，不过目前主要使用的是 react + ts。</p>
+
+<p>业余时间，尝试用 react native 写一下个人应用，发现整体的体验非常不错。这算是拓展了个人的技术范畴，基本上小应用都能够一个人全部独立完成了，至少运行起来很不错，至于优化相关的内容，还需要慢慢摸索。</p>
+
+<p>有个记账的 node 服务已经较为稳定的运行了一些年头了。未来也是看看是否能将自己的应用上架到商店，可惜的是国内对个人开发者实在是太不友好了，以至于我有些时候是有放弃的念头的。</p>]]></content><author><name></name></author><category term="生活" /><summary type="html"><![CDATA[#更新下一近期]]></summary></entry><entry><title type="html">ChatGPT 未来能带来的很多高效率的提升</title><link href="https://gzhiyi.top/chartGPT-future" rel="alternate" type="text/html" title="ChatGPT 未来能带来的很多高效率的提升" /><published>2023-02-22T15:59:44+08:00</published><updated>2023-02-22T15:59:44+08:00</updated><id>https://gzhiyi.top/chartGPT-future</id><content type="html" xml:base="https://gzhiyi.top/chartGPT-future"><![CDATA[<p><img src="https://cdn-hoodp.nitrocdn.com/HhPZwyEPNMbxJwQocjPNMHNUjcddXQui/assets/images/optimized/rev-5bac54d/app/uploads/2023/02/chatgpt.jpeg" alt="chatGPT" /></p>
+
+<p>在 2022 年到 2023 年期间，人工智能声音逐渐放大。微软和 Google 的线上对抗和竞争表明了未来互联网以及与互联网挂钩的行业发展方向，即围绕人工智能进行高效优化。这短短的时间内，元宇宙、NFT 等声音被迅速淹没。</p>
+
+<h2 id="能有什么提升">能有什么提升</h2>
+
+<p>ChatGPT 带来的最大感受，就是有一个“机器”能够读懂并理解您所说的话。这是非常重要的一步，一旦机器能够理解人类，就会出现许多有趣的进步。例如：</p>
+
+<ol>
+  <li>修图：将聊天AI与修图程序结合起来，可以用语言直接进行图片调整，从而降低了使用修图的成本。未来会有产品直接对接AI聊天，只需要输入一张图片和一个聊天输入（文本或语音），就可以实时进行信息处理、图片调用AI信息处理数据以及修图程序读取并处理。</li>
+  <li>程序员的助手：虽然在 ChatGPT 问世之前已经有了 Copilot 等工具，它们可以猜测人类的输入和思维，但目前它们停留在代码的辅助上。而像 ChatGPT 这样的 AI“程序员助手”则可以实现更多的功能。程序员在输入方面存在许多重复性的工作，例如提交代码到 Git 需要编写提交内容等。如果将这些工作交给AI处理，就可以直接一键提交，并由AI进行内容处理和分析。未来，这种 AI 操作方式还可能简化操作系统命令的操作，例如通过聊天界面直接与系统进行交互，实现文件复制、目录授权、读取文本信息等操作。</li>
+</ol>
+
+<h2 id="归根结底">归根结底</h2>
+
+<p>目前，人类与AI处于沟通的初期阶段，人类试图与AI进行交流，而AI则正处于读懂和猜测的阶段。这个阶段正在慢慢向更加自然的方向发展，未来会更多地发展人工智能技术。接下来的几年，我们会看到越来越多的AI技术的发展。</p>
+
+<p>期待《银翼杀手2049》中描绘的场景早日实现。</p>]]></content><author><name></name></author><category term="随想" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">不能在 axios 拦截器中判断 statusText 的值</title><link href="https://gzhiyi.top/do-not-verify-statusText-in-axios" rel="alternate" type="text/html" title="不能在 axios 拦截器中判断 statusText 的值" /><published>2023-02-22T10:22:51+08:00</published><updated>2023-02-22T10:22:51+08:00</updated><id>https://gzhiyi.top/do-not-verify-statusText-in-axios</id><content type="html" xml:base="https://gzhiyi.top/do-not-verify-statusText-in-axios"><![CDATA[<h1 id="问题来源">问题来源</h1>
+
+<p>项目中出现各个环境构建出来的前端资源运行都很正常，但是个别服务器 serve 的 dist 资源出现奇怪的问题。我们在 axios 的拦截器中判断了接口返回的 status 和 statusText 值：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusText</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">OK</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 视为接口服务器正确处理并返回结果</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">status</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">接口返回错误信息</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>问题环境上出现接口异常但没有触发通知组件的问题，通知组件理应在接口的状态错误的时候触发，也就是上面“接口返回错误信息”没有触发。但在其他的服务线都是正常的。</p>
+
+<h2 id="问题原因">问题原因</h2>
+
+<p>先说明问题原因，那就是 <code class="language-plaintext highlighter-rouge">Response.statusText</code> 并不总为 ‘OK’ ，即使返回的状态码为 200 。所以解决办法是去掉上面 statusText 的判断就好了。</p>
+
+<p>实际上，我们的问题主要是 http2 不支持 statusText 属性。</p>
+
+<h2 id="扩展">扩展</h2>
+
+<p>statusText 是一个只读属性。一般下，如果状态码是 200，则 statusText 为 OK，100 为 Continue，404 为 Not Found。默认值为 ‘‘。</p>]]></content><author><name></name></author><category term="前端" /><summary type="html"><![CDATA[问题来源]]></summary></entry><entry><title type="html">记感染新冠</title><link href="https://gzhiyi.top/covid" rel="alternate" type="text/html" title="记感染新冠" /><published>2022-12-21T19:37:10+08:00</published><updated>2022-12-21T19:37:10+08:00</updated><id>https://gzhiyi.top/covid</id><content type="html" xml:base="https://gzhiyi.top/covid"><![CDATA[<p><img src="https://s2.loli.net/2022/12/19/NFc9iTQg5stOxXl.png" alt="冬" /></p>
+
+<p>这次入冬，每个人几乎都需要对面的新冠。在国家陆续开放后，新冠扑面而来的速度比我想象中还要快。大概一周的时间，我就感染上并表现出了轻症的一些症状。</p>
+
+<h3 id="初步确认感染">初步确认感染</h3>
+
+<p>大概在上周一，我陆续的感觉到喉咙有些干疼，这种疼痛并不是很明显。我一度将它归咎为周末吃的一顿烤肉，而我也是那种属于容易细菌感染导致扁桃体发炎的人。因为症状不是很明显，所以没有把精力放在判断上。轻微的喉咙干痛持续到了周三。</p>
+
+<p>周三，越发觉得喉咙疼痛加剧，但身体没有发热和更多的不适。在中午午饭后，感觉越来越明显，伴随的是全身的发热。大概在下午 3 - 4 点的时候，我拿出昨晚准备好的电子体温计，测了下体温，大概测了 3 次，都在 38 ℃以上。因此感到不妙后和公司负责人提出离开公司回去居家休息，避免感染更多的同事。当时公司已经有 2 位同事因发烧在家休息了。</p>
+
+<p>在快到家的路上，觉得全是疲惫，浑身使不出力气，周身酸痛，尤其是膝盖，很酸涨的感觉。</p>
+
+<p>大概在周五早上，我才测出抗原阳性。那时候已经不会感觉到发烧了。</p>
+
+<h3 id="最难受的症状">最难受的症状</h3>
+
+<p>这次新冠感染，实际上我个人的感受是感冒的“放大版”。因为症状和普通的感冒非常类似，以往我感冒的症状，第一个就是喉咙痛，在痛完之后就开始走感冒的流程了。但新冠让我最难受的，其实是咽痛。非常疼，比扁桃体发炎还要疼上几个层次，关键是，这份疼痛持续了大概 3 - 4 天，而且减弱的趋势感知并不会很明显。疼痛感跟网上描述的差不多，就是吞刀片的感觉。这种疼痛在做吞咽动作的时候达到顶峰。期间因为喉咙痛导致 2 - 3 晚没法好好睡眠，最后都不得不吃止痛药才能勉强入睡。</p>
+
+<h3 id="大致恢复">大致恢复</h3>
+
+<p>大概在今天，我才可以说新冠的症状几乎完全消失。因为偶尔还会有几声咳嗽，而喉咙也一直有不大舒适的感觉。除了这个之外，没有其他的任何不适，胃口食欲也几乎没什么差别。总体来说，新冠的难受还是有很多的，很难想象那些年纪大，有基础病的人是会会遇到多难受的情况。现在住的这里，周围都能听到不间断的咳嗽声，我也可以判断附近大部分人都已经感染上了。希望这个社会和经济快好起来吧。</p>
+
+<h3 id="后续情况">后续情况</h3>
+
+<p>【2022 年 12 月 26 更新】今天是线下复工第一天。自身症状已经全部没了，和正常没有啥区别。早上通勤地铁上咳嗽声可以说“声声入耳”，在我排队的前后左右几乎都是。这样的情况我真不确定自己阳康后身体的抗体能抵抗多久。就有种没完没了的感觉，而现在还正在处于感染高峰期。疫情已经破坏了很多人的生活秩序，真心希望这个世界能快点把 covid 驱逐。</p>]]></content><author><name></name></author><category term="生活" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">再次经历一次找工作</title><link href="https://gzhiyi.top/looking-for-a-good-job" rel="alternate" type="text/html" title="再次经历一次找工作" /><published>2022-11-01T20:26:10+08:00</published><updated>2022-11-01T20:26:10+08:00</updated><id>https://gzhiyi.top/looking-for-a-good-job</id><content type="html" xml:base="https://gzhiyi.top/looking-for-a-good-job"><![CDATA[<p><img src="https://s2.loli.net/2022/10/17/V7SOxvZ3dk1leA2.png" alt="秋" /></p>
+<h1 id="找工作啦">找工作啦</h1>
+
+<p>如果有需要招聘 <strong>前端开发工程师</strong> 岗位的可以联系我【zhiyi.gong@outlook.com】，我会发送简历以查看是否相互合适😊。</p>
+
+<p>工作地点暂定<strong>广州</strong>，远程岗位更佳！</p>
+
+<p>我的 <a href="https://github.com/GzhiYi">github.com/GzhiYi</a>。</p>
+
+<h2 id="离职">离职</h2>
+
+<p>我在上一份工作中工作了将近 3 年，认识了非常多非常好的同事。尽管离职看起来非常干脆，但实际上还怀了很多的不舍。在上一个公司的开发路程中，学习和巩固了非常多的前端开发技能。上一份工作给我的最大印象就是氛围好，同事很 nice 。我是从入职后的几个月开始爱上了羽毛球，即便现在已经过去蛮久了，也会坚持每周打上球。这算是我项目技术外学习和热爱的另一个技能了。</p>
+
+<p>从 11 月份开始，我就要寻找下一份工作了。</p>
+
+<h2 id="前段时间">前段时间</h2>
+
+<p>在 10 月份的业余期间，我花了非常多的时间重构《单单记账》小程序的服务端代码。现在已经平稳的将用户登录信息从腾讯云的默认鉴权迁移邮箱登录鉴权上。要想在 10 月前我还在苦恼着“腾讯云快到期了咋办？”。我写了不少的小程序，几乎全部都是用了免费的云开发配额。最后除了《单单记账》外，其他的全部进行关停。另一个小程序《一起算账》也有着大概 5k 的累计用户，最后我还是把这个小程序的核心功能加入到《单单记账》中，也就是 AA 记账功能。再后续，我还开发设计了一个 PRO 会员的模块，慢慢的为后面 APP 的开发打下基础。尽管我觉得用户付费的意愿不会高，但总有喜欢的人的。我把这当作是一个特殊的开始。</p>
+
+<p>《单单记账》服务端用的是 nestjs + mongodb 的组合，在基础的 CRUD 上可以说效率很高。由于已在个人服务器上跑完整的数据库服务，所以也告别了云开发查询的一些硬性限制。虽然服务器的配置比较低，但查询性能比以往高了很多，就算我的服务器是架设在新加坡上所带来的延迟加起来还比以前有效率。</p>
+
+<p>还有一些更新迭代的计划列在了 Github Project 中。目前而言是需要将工作重心放在寻找工作上。可以说我并没有料到外部的就业环境有这么差😓。大概 3 年前我面试的机会也比现在多非常多，或许我找下一份工作需要实力外，还需要有一些运气。</p>
+
+<h2 id="后续">后续</h2>
+
+<p>不料在 11 月左右，因为疫情的缘故，喜提了 7 天小区封禁。当时还没预料到广州的疫情原来这么严重，现在每天都能看到新闻提及昨日新增***（ 3 位数）例确诊病例。不过幸好物资等等都可以购买和配送到。这期间也在不停的为面试做准备，大概小区解封后，就可以外出面试了。不过我猜现在很多公司都支持线上面试了吧。</p>]]></content><author><name></name></author><category term="生活" /><summary type="html"><![CDATA[找工作啦]]></summary></entry><entry><title type="html">小程序接口服务迁移</title><link href="https://gzhiyi.top/mpapp-api-migrate" rel="alternate" type="text/html" title="小程序接口服务迁移" /><published>2022-09-29T11:38:10+08:00</published><updated>2022-09-29T11:38:10+08:00</updated><id>https://gzhiyi.top/mpapp-api-migrate</id><content type="html" xml:base="https://gzhiyi.top/mpapp-api-migrate"><![CDATA[<h1 id="接口服务迁移重写">接口服务迁移重写</h1>
+
+<p>前情提要：<a href="/cloudbase-miniprogram-future">腾讯云开发预备收费和个人小程序的迁移</a>。</p>
+
+<p>经过一小段时间的拖延，最后还是完成了小程序接口服务从腾讯云函数迁移至 restful api 服务。使用了 nestjs + mongoose。数据库一样使用了 mongodb，和之间几乎一样的 api 让迁移阻碍少了很多。</p>
+
+<p>这里也不再说一些项目技术选用什么的，主要还是讲一下一些比较值得说的在迁移中遇到的问题。</p>
+
+<h2 id="数据库迁移">数据库迁移</h2>
+
+<p>腾讯云开发数据库导出 json 的话，_id 会被默认为 string 类型。而如果在 mongoose 中未在 schema 中指定 _id 为 string 类型的话，会出现 <code class="language-plaintext highlighter-rouge">cast id ...  问题</code>。因为 mongoose 会默认 _id 类型为 ObjectId。也就是说，可能出现两种不同类型的 _id，这会在数据 update 或者 remove 时出现异常。</p>
+
+<p>我的处理方式是给每一个集合的 _id 手动设置为 string 类型。那在 create 的时候就会是 string 类型的 _id。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// schema</span>
+<span class="p">@</span><span class="nd">Schema</span><span class="p">()</span>
+<span class="c1">// ... 省略</span>
+<span class="p">@</span><span class="nd">Prop</span><span class="p">()</span>
+<span class="nx">_id</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+
+<span class="c1">// service</span>
+<span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">UserModel</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">_id</span><span class="p">:</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Types</span><span class="p">.</span><span class="nx">ObjectId</span><span class="p">(),</span>
+  <span class="p">...</span><span class="nx">others</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="用户信息绑定">用户信息绑定</h2>
+
+<p>原本用户信息表仅仅保存了用户的 openId。因为云开发具有天然的鉴权机制，所以在用户无感知的情况下就可以拿到用户在该小程序中的唯一 id，也就是 openId。而新的接口服务，不再依赖于云开发的鉴权机制，统一使用邮箱 + 密码的方式注册登录。这就有一个用户数据迁移，openId 绑定邮箱的问题了。</p>
+
+<p>当一个用户刚使用新的接口服务，会被提示”未登录”，如果需要继续使用，就必须进行注册。</p>
+
+<p>注意下面省略了邮箱收取验证码并进行校验等安全流程，只描述主要流程。</p>
+
+<h3 id="注册">注册</h3>
+
+<p>因为要关联用户的 openId 到用户新建的邮箱，而服务端是不明确用户的 openId 指的是谁，所以需要在一段时间内从原本的云开发服务中拿到用户的 openId。云开发获取的 openId 是能信任的。</p>
+
+<ol>
+  <li>如果该 openId 查询到的用户信息已有邮箱和密码，返回用户已绑定并注册账户。</li>
+  <li>如果该 openId 查询到的用户信息中邮箱和密码为空，则走注册流程，将用户填写的密码和邮箱写入到用户表中。</li>
+</ol>
+
+<h3 id="登录">登录</h3>
+
+<p>用户直接使用邮箱和密码登录。但登录还要处理 openId 问题。</p>
+
+<p>如果用户已经注册过了，即使用了不同的手机进行小程序登录，也应该保持注册邮箱的那个 openId 。这可能会和注册冲突，因为注册时也用到了openId。所以目前是判断如果登录用户的 openId 和云开发返回的 openId 不一致，提示目前不支持换设备登录。这个限制会在一段时间后移除。</p>
+
+<p>最终的目的是持有邮箱和密码就可以在任何设备进行登录，目前的做法是为了方便用户正确的迁移账户数据。</p>
+
+<h3 id="服务部署">服务部署</h3>
+
+<p>在最后一刻我才回想起来，小程序接口服务需要 https 不说，还需要该服务器在国内备案，我买的轻量应用服务器在新加坡😠。搜索无果后，没办法，找了一个勉强能使用的方法：使用云函数中转请求。</p>
+
+<p>云函数大概的长这样：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">request</span><span class="p">({</span>
+      <span class="nx">url</span><span class="p">,</span>
+      <span class="nx">headers</span><span class="p">,</span>
+      <span class="na">method</span><span class="p">:</span> <span class="nx">method</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">body</span><span class="p">:</span> <span class="nx">data</span><span class="p">,</span>
+      <span class="na">json</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="p">{</span>
+          <span class="nx">resolve</span><span class="p">({</span>
+            <span class="na">statusCode</span><span class="p">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">,</span>
+            <span class="na">data</span><span class="p">:</span> <span class="nx">body</span>
+          <span class="p">})</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">reject</span><span class="p">()</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+</code></pre></div></div>
+
+<p>使用云函数的缺点就是还不能完全摆脱云开发，每月还得付费。计划等用户数据迁移完成后，买个国内的服务器然后备案。还是不走捷径了。💔。</p>]]></content><author><name></name></author><category term="小程序" /><summary type="html"><![CDATA[接口服务迁移重写]]></summary></entry><entry><title type="html">腾讯云开发预备收费和个人小程序的迁移</title><link href="https://gzhiyi.top/cloudbase-miniprogram-future" rel="alternate" type="text/html" title="腾讯云开发预备收费和个人小程序的迁移" /><published>2022-08-17T11:04:41+08:00</published><updated>2022-08-17T11:04:41+08:00</updated><id>https://gzhiyi.top/cloudbase-miniprogram-future</id><content type="html" xml:base="https://gzhiyi.top/cloudbase-miniprogram-future"><![CDATA[<h1 id="腾讯云开发收费">腾讯云开发收费</h1>
+
+<p>早已听闻，腾讯云开发预计在 9 月中旬开始进行收费，原基础免费配额将变更为每月最低 19.9 元，并在优惠过后变更为每月 39.9 元。这对个人开发者而言无疑是很大的打击。</p>
+
+<h2 id="影响内容">影响内容</h2>
+
+<p>个人在腾讯云中部署了几个小程序的后端服务。他们都是没有广告植入，也没有进行收费。也就是说，这几个小程序基本都是没有收益的（除了个别小程序有用户出于鼓励进行的少量打赏激励）。因此，我大概的，会在免费配额服务周期结束之后，慢慢停止小程序的服务。尽管决定比较难，但这算是最好的办法了。无奈个人小程序在收益方面的扩展艰难重重。</p>
+
+<p>影响最大的是<code class="language-plaintext highlighter-rouge">单单记账</code>微信小程序。目前日活都还比较稳定，用户反馈也比较好，算是个人开发的比较满意的小程序了。回想起以前刚完成基础功能之后，会在一些社区进行一些简单的推广，也得到不少网友的好评。初衷其实也是想给自己一个干净、隐私、UI 不错的记账小程序，因为当时看到基本没有一个是满足上面要求的。大多记账小程序要么广告云集，要么目的不明确，要么要你手机号等个人信息。</p>
+
+<p>直到现在，<code class="language-plaintext highlighter-rouge">单单记账</code>已经累计服务用户有 5000 多啦。瞄了下数据库，账单总量在 10 万以上。说下线服务，多少是有些遗憾的。且不说会对不住用户，就小程序而言，真的很适合手机端多平台用户的使用。</p>
+
+<h2 id="后续">后续</h2>
+
+<p>考虑使用其他云服务进行替代，尝试使用了下<code class="language-plaintext highlighter-rouge">supabase</code>进行替换，但调研了下，函数的迁移比较困难，无异于重写一份。<code class="language-plaintext highlighter-rouge">supabase</code>主要以数据库为主，其他的云函数方面貌似还没有达到腾讯云开发或者<code class="language-plaintext highlighter-rouge">firebase</code>的地步。外加上在小程序调用的话，对 <code class="language-plaintext highlighter-rouge">supabase sdk</code> 的支持还可能有不少的未知数。所以替代方案暂时不再往深的方面思考。</p>
+
+<p>尽管短期会对服务进行下线。但我也有计划将<code class="language-plaintext highlighter-rouge">单单记账</code>写成 app ，包含 Android 和 iOS 客户端。目前正在学习和接触相关技术知识中，且等后续实现…</p>
+
+<p>对于技术选型，之前考虑直接使用 swiftUI 写一个原生的 iOS app。没错，我之前计划是不考虑 Android 客户端的，因为觉得 Android 用户可以直接使用小程序。但现在想法改变了，计划使用 Flutter 写一个两端的 app 。我对这个很期待，也正是这个期待，可以让我有不少的动力去执行。</p>]]></content><author><name></name></author><category term="小程序" /><summary type="html"><![CDATA[腾讯云开发收费]]></summary></entry><entry><title type="html">Webpack 文档要点记录</title><link href="https://gzhiyi.top/webpack-doc-note" rel="alternate" type="text/html" title="Webpack 文档要点记录" /><published>2022-08-03T23:32:51+08:00</published><updated>2022-08-03T23:32:51+08:00</updated><id>https://gzhiyi.top/webpack-doc-note</id><content type="html" xml:base="https://gzhiyi.top/webpack-doc-note"><![CDATA[<h1 id="记录一些可能容易写错的有关-webpack-的知识点">记录一些可能容易写错的有关 Webpack 的知识点</h1>
+
+<p>来源主要为官方文档以及一些实践。内容会慢慢补充。</p>
+
+<h2 id="use-loader-需要保证顺序">use loader 需要保证顺序</h2>
+
+<p>模块的 loader 可以链式调用。链中的每一个 loader 会将本 loader 处理结果递给下一个。需要注意链是逆顺序执行（从右到左，或说从下至上）。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rules</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">css$/i</span><span class="p">,</span>
+    <span class="na">use</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">style-loader</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">css-loader</span><span class="dl">'</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>上面表示所有匹配的 css 文件先给 css-loader 处理，再给 style-loader 处理。</p>]]></content><author><name></name></author><category term="Webpack" /><summary type="html"><![CDATA[记录一些可能容易写错的有关 Webpack 的知识点]]></summary></entry><entry><title type="html">CommonJS 和 Es Module 的一些小总结</title><link href="https://gzhiyi.top/commonjs-and-esmodule" rel="alternate" type="text/html" title="CommonJS 和 Es Module 的一些小总结" /><published>2022-08-01T21:10:49+08:00</published><updated>2022-08-01T21:10:49+08:00</updated><id>https://gzhiyi.top/commonjs-and-esmodule</id><content type="html" xml:base="https://gzhiyi.top/commonjs-and-esmodule"><![CDATA[<h1 id="关于-commonjs-和-es-module">关于 CommonJs 和 Es Module</h1>
+
+<p>在之前我写过一个关于 Es Module 的<a href="/es6-module">小总结</a>，但没加上和 CommonJs 的对比，所以这里就再次做一下这两者的区别和做一下总结。</p>
+
+<h2 id="历史区别">历史区别</h2>
+
+<p>Common Js 早于 Es Module。以前 JS 就没有完善的模块化概念，只是通过引入 Script 的方式将脚本进行“模块化”。这样的引入在项目代码多起来之后就变得十分不好维护，而且变量可能会被覆盖，造成污染。随后就出现了 CommonJs，再然后到了 ES6 的时代，正式引入ES Module。</p>
+
+<h2 id="commonjs-使用">CommonJs 使用</h2>
+
+<ol>
+  <li>直接导出。省略了 <code class="language-plaintext highlighter-rouge">module</code> 关键字：<code class="language-plaintext highlighter-rouge">exports.name</code>。</li>
+  <li>
+    <p>导出。</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// 对象</span>
+ <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+ <span class="p">}</span>
+
+ <span class="c1">// 某个值</span>
+ <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>混合导出。<code class="language-plaintext highlighter-rouge">exports</code> 和 <code class="language-plaintext highlighter-rouge">module.exports</code> 可以混在一起使用。</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">exports</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+ <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>导入。使用 <code class="language-plaintext highlighter-rouge">require</code> 关键字。导入可以出现在任何地方，所以支持动态导入。</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./index.js</span><span class="dl">"</span><span class="p">)</span>
+
+ <span class="c1">// 动态导入</span>
+
+ <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./index.js</span><span class="dl">"</span>
+ <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="es-module-使用">Es Module 使用</h2>
+
+<p><a href="/es6-module">前面一篇</a>有提到，有更加具体的描述。</p>
+
+<ol>
+  <li>
+    <p>导出。包含单个导出、混合导出。</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">// 单个导出</span>
+ <span class="k">export</span> <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+    
+ <span class="c1">// 混合导出</span>
+ <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">GzhiYi</span><span class="dl">"</span>
+ <span class="kd">const</span> <span class="nx">country</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">china</span><span class="dl">"</span>
+
+ <span class="k">export</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">country</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>混合导出。</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">export</span> <span class="kd">const</span> <span class="nx">city</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Guangzhou</span><span class="dl">"</span>
+
+ <span class="k">export</span> <span class="k">default</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="na">age</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+   <span class="na">city</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Guangzhou</span><span class="dl">"</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>导入。<code class="language-plaintext highlighter-rouge">import { name, age } from './index.js'</code>。</p>
+  </li>
+</ol>]]></content><author><name></name></author><category term="前端" /><summary type="html"><![CDATA[关于 CommonJs 和 Es Module]]></summary></entry></feed>

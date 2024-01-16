@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>腾讯云开发预备收费和个人小程序的迁移 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="腾讯云开发预备收费和个人小程序的迁移" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="腾讯云开发收费" />
+<meta property="og:description" content="腾讯云开发收费" />
+<link rel="canonical" href="https://gzhiyi.top/cloudbase-miniprogram-future" />
+<meta property="og:url" content="https://gzhiyi.top/cloudbase-miniprogram-future" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-17T11:04:41+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="腾讯云开发预备收费和个人小程序的迁移" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-17T11:04:41+08:00","datePublished":"2022-08-17T11:04:41+08:00","description":"腾讯云开发收费","headline":"腾讯云开发预备收费和个人小程序的迁移","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/cloudbase-miniprogram-future"},"url":"https://gzhiyi.top/cloudbase-miniprogram-future"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">腾讯云开发预备收费和个人小程序的迁移</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-08-17T11:04:41+08:00" itemprop="datePublished">2022-08-17 11:04
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="腾讯云开发收费">腾讯云开发收费</h1>
+
+<p>早已听闻，腾讯云开发预计在 9 月中旬开始进行收费，原基础免费配额将变更为每月最低 19.9 元，并在优惠过后变更为每月 39.9 元。这对个人开发者而言无疑是很大的打击。</p>
+
+<h2 id="影响内容">影响内容</h2>
+
+<p>个人在腾讯云中部署了几个小程序的后端服务。他们都是没有广告植入，也没有进行收费。也就是说，这几个小程序基本都是没有收益的（除了个别小程序有用户出于鼓励进行的少量打赏激励）。因此，我大概的，会在免费配额服务周期结束之后，慢慢停止小程序的服务。尽管决定比较难，但这算是最好的办法了。无奈个人小程序在收益方面的扩展艰难重重。</p>
+
+<p>影响最大的是<code class="language-plaintext highlighter-rouge">单单记账</code>微信小程序。目前日活都还比较稳定，用户反馈也比较好，算是个人开发的比较满意的小程序了。回想起以前刚完成基础功能之后，会在一些社区进行一些简单的推广，也得到不少网友的好评。初衷其实也是想给自己一个干净、隐私、UI 不错的记账小程序，因为当时看到基本没有一个是满足上面要求的。大多记账小程序要么广告云集，要么目的不明确，要么要你手机号等个人信息。</p>
+
+<p>直到现在，<code class="language-plaintext highlighter-rouge">单单记账</code>已经累计服务用户有 5000 多啦。瞄了下数据库，账单总量在 10 万以上。说下线服务，多少是有些遗憾的。且不说会对不住用户，就小程序而言，真的很适合手机端多平台用户的使用。</p>
+
+<h2 id="后续">后续</h2>
+
+<p>考虑使用其他云服务进行替代，尝试使用了下<code class="language-plaintext highlighter-rouge">supabase</code>进行替换，但调研了下，函数的迁移比较困难，无异于重写一份。<code class="language-plaintext highlighter-rouge">supabase</code>主要以数据库为主，其他的云函数方面貌似还没有达到腾讯云开发或者<code class="language-plaintext highlighter-rouge">firebase</code>的地步。外加上在小程序调用的话，对 <code class="language-plaintext highlighter-rouge">supabase sdk</code> 的支持还可能有不少的未知数。所以替代方案暂时不再往深的方面思考。</p>
+
+<p>尽管短期会对服务进行下线。但我也有计划将<code class="language-plaintext highlighter-rouge">单单记账</code>写成 app ，包含 Android 和 iOS 客户端。目前正在学习和接触相关技术知识中，且等后续实现…</p>
+
+<p>对于技术选型，之前考虑直接使用 swiftUI 写一个原生的 iOS app。没错，我之前计划是不考虑 Android 客户端的，因为觉得 Android 用户可以直接使用小程序。但现在想法改变了，计划使用 Flutter 写一个两端的 app 。我对这个很期待，也正是这个期待，可以让我有不少的动力去执行。</p>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/cloudbase-miniprogram-future" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

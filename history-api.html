@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>修改浏览器回退历史 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="修改浏览器回退历史" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<meta property="og:description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<link rel="canonical" href="https://gzhiyi.top/history-api" />
+<meta property="og:url" content="https://gzhiyi.top/history-api" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-12T20:00:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="修改浏览器回退历史" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-04-12T20:00:00+08:00","datePublished":"2019-04-12T20:00:00+08:00","description":"我是一名 Web 前端工程师。热爱生活，热爱宇宙。","headline":"修改浏览器回退历史","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/history-api"},"url":"https://gzhiyi.top/history-api"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">修改浏览器回退历史</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-04-12T20:00:00+08:00" itemprop="datePublished">2019-04-12 20:00
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="https://user-images.githubusercontent.com/21136420/56006752-c05db900-5d08-11e9-94c3-61938d3f2eeb.png" alt="无标题绘图" /></p>
+
+<p>有个需求，需要修改短链跳转到落地页后，在落地页返回的历史记录。避免出现跳转到落地页后返回还是出现短链中转的问题。</p>
+
+<p>要求：</p>
+<ol>
+  <li>无法控制落地页的所有代码。</li>
+  <li>回退页面可在短链内进行定义。</li>
+</ol>
+
+<h3 id="history-api">History Api</h3>
+
+<p>history api提供浏览器修改历史记录功能。简单罗列下api的一些使用。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 返回上一个历史记录</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">back</span><span class="p">()</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">// 前进一个历史记录</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">forward</span><span class="p">()</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">go</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">// 添加或者替换历史记录条目，注意这【并不会刷新页面】。</span>
+<span class="nx">history</span><span class="p">.</span><span class="nx">pushState</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+<span class="c1">// state：网址相关的状态Object，在popstate事件触发时，会在回调函数中接收到这个对象。不需要的话可以设为null。</span>
+<span class="c1">// title：新页面的title属性，填null。</span>
+<span class="c1">// url：新的页面地址，必须必须和上一个页面处于同域，否则抛出异常。</span>
+
+<span class="c1">// 替换当前的历史记录，注意这【并不会刷新页面】。</span>
+<span class="nx">history</span><span class="p">.</span><span class="nx">replaceState</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+<span class="c1">// 参数同上。</span>
+</code></pre></div></div>
+
+<h3 id="实现的思考">实现的思考</h3>
+
+<ol>
+  <li>
+    <p>第一次尝试。既然要实现在落地页返回的历史，可不可以在短链中转页上监听一下上一页面的url，当然在跳转到落地页之前可以在落地页的url上带上参数，可以在短链中转页上通过是否带这个参数进行判断。放弃，理由是麻烦而且不稳定，可能出现难以预料的问题。</p>
+  </li>
+  <li>
+    <p>第二次尝试。使用历史记录api修改历史记录。要修改的页面是短链中转页的历史记录，需要替换【当前】短链中转页的历史，使得跳转到落地页到上一个历史是短链所配置到页面。</p>
+  </li>
+</ol>
+
+<p>需要注意到是，历史记录不能replace或者push不同域的url。所以需要通过一个queryString进行判断。所以做法是：</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">getParam</span><span class="p">(</span><span class="dl">'</span><span class="s1">backUrl</span><span class="dl">'</span><span class="p">,</span> <span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">进入跳转到预定回退页</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">location</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">getParam</span><span class="p">(</span><span class="dl">'</span><span class="s1">backUrl</span><span class="dl">'</span><span class="p">,</span> <span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">))</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">进入跳转到落地页并改写历史</span><span class="dl">'</span><span class="p">)</span>
+        <span class="nx">history</span><span class="p">.</span><span class="nx">replaceState</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span>  <span class="dl">"</span><span class="s2">[域名、处理返回逻辑页面]?backUrl=https://www.baidu.com</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">jump-id</span><span class="dl">'</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span> <span class="c1">// 跳转到落地页</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="c1">// getParam是获取链接qs参数的函数。</span>
+</code></pre></div></div>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/history-api" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>

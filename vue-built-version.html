@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Vue构建出来的版本 | GzhiYi 的个人博客</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Vue构建出来的版本" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<meta property="og:description" content="我是一名 Web 前端工程师。热爱生活，热爱宇宙。" />
+<link rel="canonical" href="https://gzhiyi.top/vue-built-version" />
+<meta property="og:url" content="https://gzhiyi.top/vue-built-version" />
+<meta property="og:site_name" content="GzhiYi 的个人博客" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-12T15:43:53+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Vue构建出来的版本" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-12T15:43:53+08:00","datePublished":"2021-08-12T15:43:53+08:00","description":"我是一名 Web 前端工程师。热爱生活，热爱宇宙。","headline":"Vue构建出来的版本","mainEntityOfPage":{"@type":"WebPage","@id":"https://gzhiyi.top/vue-built-version"},"url":"https://gzhiyi.top/vue-built-version"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://gzhiyi.top/feed.xml" title="GzhiYi 的个人博客" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRRRY4XFPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+
+  gtag('config', 'G-KRRRY4XFPE');
+</script><script async src="/assets/medium-zoom.min.js"></script>
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><div style="float: left;">
+      <a class="site-title" rel="author" href="/">GzhiYi </a>
+      <span class="slogan">想遨游宇宙 🌌</span>
+    </div><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <div class="flex justify-between">
+      <div class="back">
+        <img src="/assets/back.svg" alt="back"> 返回
+      </div>
+      <div class="comment">
+        <img src="/assets/comment.svg" alt="comment"> 评论
+      </div>
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">Vue构建出来的版本</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-08-12T15:43:53+08:00" itemprop="datePublished">2021-08-12 15:43
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="https://i.loli.net/2021/08/12/gPNOFU8ycMaV9Jh.png" alt="图 2" /></p>
+
+<h3 id="vue构建版本">Vue构建版本</h3>
+
+<p>vue构建的版本好多，可以从上图看到。从源码的构建上了解vue构建的版本。</p>
+
+<p>从<code class="language-plaintext highlighter-rouge">/scripts/config.js</code>中看到，<code class="language-plaintext highlighter-rouge">builds</code>常量定义了各个构建版本的配置。比如：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">web-runtime-cjs-dev</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">entry</span><span class="p">:</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">web/entry-runtime.js</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">dest</span><span class="p">:</span> <span class="nx">resolve</span><span class="p">(</span><span class="dl">'</span><span class="s1">dist/vue.runtime.common.dev.js</span><span class="dl">'</span><span class="p">),</span>
+  <span class="nx">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cjs</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">env</span><span class="p">:</span> <span class="dl">'</span><span class="s1">development</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">banner</span>
+<span class="p">},</span>
+</code></pre></div></div>
+
+<p>表示要构建出cjs格式的vue源码。而<code class="language-plaintext highlighter-rouge">web-runtime</code>也表示了只构建出runtime版本的vue源码。<code class="language-plaintext highlighter-rouge">-dev</code>则表示不会进行代码压缩，构建出来的版本属于开发版本。</p>
+
+<p>除了上面列举的第一个外，还有：</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">web-runtime-cjs-prod</code>。 构建【web平台、commonjs、runtime、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.runtime.common.prod.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-cjs-dev</code>。 构建【web平台、commonjs、runtime、compiler、开发版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.common.dev.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-cjs-prod</code>。 构建【web平台、commonjs、runtime、compiler、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.common.prod.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-runtime-esm</code>。 构建【web平台、esmodule、runtime】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.esm.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-esm</code>。 构建【web平台、esmodule、runtime、compiler】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.esm.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-esm-browser-dev</code>。 构建【web平台、esmodule、runtime、compiler、浏览器直接引入、开发版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.esm.browser.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-esm-browser-prod</code>。 构建【web平台、esmodule、runtime、compiler、浏览器直接引入、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.esm.browser.min.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-runtime-dev</code>。 构建【web平台、runtime、umd、开发版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.runtime.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-runtime-prod</code>。 构建【web平台、runtime、umd、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.runtime.min.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-dev</code>。 构建【web平台、runtime、umd、compiler、开发版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-full-prod</code>。 构建【web平台、runtime、umd、compiler、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">dist/vue.min.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-compiler</code>。 构建【web平台、commonjs、compiler】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-template-compiler/build.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-compiler-browser</code>。 构建【web平台、commonjs、compiler】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-template-compiler/browser.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-server-renderer-dev</code>。 构建【服务端、commonjs、开发版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-server-renderer/build.dev.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-server-renderer-prod</code>。 构建【服务端、commonjs、生产版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-server-renderer/build.prod.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-server-renderer-basic</code>。 构建【服务端、umd、basic版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-server-renderer/basic.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-server-renderer-webpack-server-plugin</code>。 构建【服务端、commonjs、服务端插件版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-server-renderer/server-plugin.js</code>。</li>
+  <li><code class="language-plaintext highlighter-rouge">web-server-renderer-webpack-client-plugin</code>。 构建【服务端、commonjs、客户端插件版】源码；对应输出的文件为：<code class="language-plaintext highlighter-rouge">packages/vue-server-renderer/client-plugin.js</code>。</li>
+</ul>
+
+<h2 id="版本区别">版本区别</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>UMD</th>
+      <th>CommonJS</th>
+      <th>ES Module</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>全版本</strong></td>
+      <td>vue.js</td>
+      <td>vue.common.js</td>
+      <td>vue.esm.js</td>
+    </tr>
+    <tr>
+      <td><strong>只包含运行时</strong></td>
+      <td>vue.runtime.js</td>
+      <td>vue.runtime.common.js</td>
+      <td>vue.runtime.esm.js</td>
+    </tr>
+    <tr>
+      <td><strong>全版本（生产版）</strong></td>
+      <td>vue.min.js</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>只包含运行时（生产版）</strong></td>
+      <td>vue.runtime.min.js</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p><strong>Full</strong>: 包含了编译器和运行时。</p>
+  </li>
+  <li>
+    <p><strong>Compiler</strong>: 编译版本。可以把template字符串代码编译为javascript render函数。</p>
+  </li>
+  <li>
+    <p><strong>Runtime</strong>: 用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。</p>
+  </li>
+  <li>
+    <p><strong><a href="https://github.com/umdjs/umd">UMD</a></strong>: UMD 版本可以通过<code class="language-plaintext highlighter-rouge">script</code>标签直接用在浏览器中。</p>
+  </li>
+  <li>
+    <p><strong><a href="http://wiki.commonjs.org/wiki/Modules/1.1">CommonJS</a></strong>: CommonJS 版本用来配合老的打包工具比如 Browserify 或 webpack 1。这些打包工具的默认文件 (pkg.main) 是只包含运行时的 CommonJS 版本 (vue.runtime.common.js)。</p>
+  </li>
+  <li>
+    <p><strong><a href="http://exploringjs.com/es6/ch_modules.html">ES Module</a></strong>: ES module版本提供给现代的打包工具，比如webpack2、rollup。为这些打包工具提供的默认文件 (pkg.module) 是只有运行时的 ES Module 构建 (vue.runtime.esm.js)</p>
+  </li>
+</ul>
+
+<p>一般也是要用运行时的版本，运行时版本只占用全版本提及的30%。我们在使用webpack的vue-loader工具最后到网页的呈现时，用的就是运行时的版本，<code class="language-plaintext highlighter-rouge">*.vue</code> 文件内部的模板会在构建时预编译成 JavaScript render函数。</p>
+
+  </div>
+
+  <script src="https://giscus.app/client.js"
+    data-repo="GzhiYi/blog"
+    data-repo-id="R_kgDOHTfM8w"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOHTfM884CPCdh"
+    data-mapping="og:title"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    data-theme="light_protanopia"
+    crossorigin="anonymous"
+    async>
+  </script><a class="u-url" href="/vue-built-version" hidden></a>
+</article>
+
+      </div>
+    </main><div class="footer">
+  <div class="slogan">想遨游宇宙 🌌</div>
+</div><script>
+      window.onload = function () {
+        const back = document.querySelector('.back');
+        const comment = document.querySelector('.comment');
+        const giscus = document.querySelector('.giscus');
+        const filterTime = document.querySelector('#filter-time');
+        const filterCategory = document.querySelector('#filter-category');
+        const pathname = window.location.pathname;
+
+        mediumZoom && mediumZoom(document.querySelectorAll('.post-content img'))
+
+        back && back.addEventListener('click', function () {
+          // to root
+          window.location.href = '/'
+        });
+        comment && comment.addEventListener('click', function () {
+          giscus.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+        
+        if (pathname === '/') {
+          filterTime.classList.add('active');
+        } else if (pathname === '/categories') {
+          filterCategory.classList.add('active');
+        }
+
+        if (pathname === '/about/') {
+          const rectItemEl = document.querySelectorAll('.rect-item');
+          const tipEl = document.querySelector('.svg-tip')
+          tipEl.style.display = 'none'
+          for (let i = 0; i < rectItemEl.length; i++) {
+            const blogCount = rectItemEl[i].getAttribute('data-count')
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseover', function (e) {
+              const date = e.target.dataset.date
+              const count = e.target.dataset.count
+              const week = new Date(date).toLocaleString(
+                'default', { weekday: 'long' }
+              )
+              const tipStr = `
+                <div class="tip">
+                  <div class="item">日期：${date}，${week.replace('星期', '周')}</div>
+                  <div class="item">文章数：${count}</div>
+                </div>
+              `
+              tipEl.style.top = e.screenY - 210 + 'px'
+              tipEl.style.left = e.screenX - 65 + 'px'
+              tipEl.style.display = 'inherit'
+              tipEl.innerHTML = tipStr
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('mouseout', function (e) {
+              const tipEl = document.querySelector('.svg-tip')
+              tipEl.style.display = 'none'
+            })
+            blogCount !== '0' && rectItemEl[i].addEventListener('click', function (e) {
+              window.sessionStorage.setItem('filter-time', `d${e.target.dataset.date}`)
+              window.location.href = `/`
+            })
+          }
+        }
+        if (pathname === '/') {
+          const filterTime = window.sessionStorage.getItem('filter-time')
+          if (filterTime) {
+            const goEl = document.querySelector(`#${filterTime}`)
+            goEl.style.color = 'red'
+            goEl && goEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            setTimeout(() => {
+              goEl.style.color = 'inherit'
+            }, 1500)
+            window.sessionStorage.removeItem('filter-time')
+          }
+        }
+      }
+    </script>
+  </body>
+
+</html>
